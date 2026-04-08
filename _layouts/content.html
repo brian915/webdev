@@ -8,12 +8,15 @@ layout: wrapper
 {% else %}
   {% assign split_text_class = "col-12 col-md-8" %}
 {% endif %}
-<div class="sale-ticker d-block d-md-none" aria-label="Promotion">
+{% assign promo = site.data.promo %}
+{% if promo and promo.enabled %}
+<div class="sale-ticker d-block d-md-none" aria-label="{{ promo.aria_label | default: 'Promotion' }}">
   <div class="sale-ticker-track">
-    <span>Spring Sale • 50% off regular price if you order by May 15</span>
-    <span>Spring Sale • 50% off regular price if you order by May 15</span>
+    <span>{{ promo.text }}</span>
+    <span>{{ promo.text }}</span>
   </div>
 </div>
+{% endif %}
 <div class="intro">
   <div class="container">
     <div class="row justify-content-start">
@@ -43,12 +46,14 @@ layout: wrapper
     </div>
   </div>
 </div>
-<div class="sale-ticker d-none d-md-block" aria-label="Promotion">
+{% if promo and promo.enabled %}
+<div class="sale-ticker d-none d-md-block" aria-label="{{ promo.aria_label | default: 'Promotion' }}">
   <div class="sale-ticker-track">
-    <span>Spring Sale • 50% off regular price if you order by May 15</span>
-    <span>Spring Sale • 50% off regular price if you order by May 15</span>
+    <span>{{ promo.text }}</span>
+    <span>{{ promo.text }}</span>
   </div>
 </div>
+{% endif %}
 {% if page.hero_text and content != blank %}
 <div class="container pb-2 pt-2">
   <div class="row justify-content-start">
