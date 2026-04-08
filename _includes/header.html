@@ -1,0 +1,21 @@
+{% assign mainmenu = site.data.nav.main | sort: 'weight' %}
+{% assign logo_url = '/' %}
+{% for item in mainmenu %}
+  {% unless item.url == page.url %}
+    {% assign logo_url = item.url %}
+    {% break %}
+  {% endunless %}
+{% endfor %}
+
+<div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="{{ logo_url | relative_url }}"><img width="{{ site.logo.desktop_width }}" height="{{ site.logo.desktop_height }}" alt="{{ site.title }}" src="{{ site.logo.desktop | relative_url }}" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="{{ logo_url | relative_url }}"><img width="{{ site.logo.mobile_width }}" height="{{ site.logo.mobile_height }}" alt="{{ site.title }}" src="{{ site.logo.mobile | relative_url }}" /></a>
+    </div>
+    {% include nav.html variant='desktop' %}
+    {% include hamburger.html %}
+  </div>
+</div>

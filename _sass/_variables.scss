@@ -1,0 +1,33 @@
+$palette: (
+    accent: #325d88,
+    accent-dark: #284a6d,
+    secondary: #93c54b,
+    fg-bold: #3e3f3a,
+    bg: #ffffff,
+    fg-inverse: #ffffff,
+    bg-alt: #f8f5f0,
+    fg: #3e3f3a,
+    accent-hover: #2b4f74,
+    border: #dfd7ca
+);
+
+$font: (
+    family: (Helvetica, Arial, sans-serif, -apple-system),
+    family-heading: ("Playfair Display", serif, -apple-system)
+);
+
+$size: (
+    breakpoint: (
+        sm: 576px,
+        md: 980px,
+        lg: 992px,
+        xl: 1300px
+    )
+);
+
+$duration: ();
+
+$misc: (
+    link-decoration: none,
+    link-hover-decoration: underline
+);

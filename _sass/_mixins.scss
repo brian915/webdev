@@ -1,0 +1,12 @@
+@mixin media-breakpoint-up($name) {
+    $min-width: _size(breakpoint, $name);
+
+    @if $min-width == null or $min-width == 0 {
+        @content;
+    }
+    @else {
+        @media (min-width: $min-width) {
+            @content;
+        }
+    }
+}

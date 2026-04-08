@@ -1,0 +1,39 @@
+---
+---
+
+@import "functions";
+@import "variables";
+@import "mixins";
+
+// Components
+@import "components/type";
+@import "components/page";
+@import "components/header";
+@import "components/footer";
+@import "components/sub-footer";
+@import "components/logo";
+@import "components/main-menu";
+@import "components/main-menu-mobile";
+@import "components/hamburger";
+@import "components/buttons";
+@import "components/call";
+@import "components/title";
+@import "components/content";
+@import "components/intro";
+@import "components/intro-image";
+@import "components/strip";
+@import "components/feature";
+// @import "components/fonts"; // Uncomment this line to self host font
+
+// Pages
+@import "pages/page-home";
+
+body {
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: _font(family);
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+}

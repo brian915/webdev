@@ -1,0 +1,21 @@
+<div class="call">
+
+  <div class="call-box-top">
+    <div class="text-accent">Request A Quote</div>
+    {% if site.phone %}
+        <div class="call-phone"><strong>Phone: </strong> {{ site.phone }} </div>
+    {% endif %}
+    {% if site.email %}
+    <div class="call-email"><strong>Email: </strong>
+      <a href="mailto:{{ site.email }}">
+        {{ site.email }}
+      </a>
+    </div>
+    {% endif %}
+</div>
+    {% if include.show_button and site.email %}
+      <div class="call-box-bottom">
+        <a href="mailto:{{ site.email }}" class="button">Email</a>
+      </div>
+    {% endif %}
+</div>

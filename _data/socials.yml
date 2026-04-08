@@ -1,0 +1,19 @@
+social_entries:
+  - title: Portfolio
+    url: https://www.brianrunk.net
+    img: duck.svg
+    alt_txt: Portfolio
+  - title: LinkedIn
+    url: https://www.linkedin.com/in/brianrunk
+    img: linkedin.svg
+    alt_txt: LinkedIn
+
+  - title: GitHub
+    url: https://github.com/brian915
+    img: github.svg
+    alt_txt: GitHub
+
+  - title: Instagram
+    url: https://instagram.com/brian_915
+    img: instagram.svg
+    alt_txt: Instagram

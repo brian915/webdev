@@ -1,0 +1,12 @@
+<div class="d-flex flex-wrap align-items-center">
+{% for social_item in include.collection %}
+<a href="{{ social_item.url }}" target="_blank" rel="noopener noreferrer" class="social-icon-link text-white text-decoration-none me-3 mb-1">
+  {% if social_item.img %}
+  <img class="social-icon" src="{{ '/assets/images/socials/' | append: social_item.img | relative_url }}" alt="{{ social_item.alt_txt | default: social_item.title }}" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
+  <span class="social-icon-fallback" style="display:none;">{{ social_item.alt_txt | default: social_item.title }}</span>
+  {% else %}
+  {{ social_item.alt_txt | default: social_item.title }}
+  {% endif %}
+</a>
+{% endfor %}
+</div>

@@ -1,0 +1,26 @@
+{% assign mainmenu = site.data.nav.main | sort: 'weight' %}
+{% if include.variant == 'mobile' %}
+<div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    {% for item in mainmenu %}
+    {% unless item.url == page.url %}
+    <li>
+      <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+    </li>
+    {% endunless %}
+    {% endfor %}
+  </ul>
+</div>
+{% else %}
+<div id="main-menu" class="main-menu">
+  <ul>
+    {% for item in mainmenu %}
+    {% unless item.url == page.url %}
+    <li>
+      <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+    </li>
+    {% endunless %}
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

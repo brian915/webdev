@@ -1,0 +1,29 @@
+<footer class="footer">
+  <div class="sub-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="sub-footer-inner">
+
+            {% include social_link_list.html collection=site.data.socials.social_entries %}
+            <div class="sub-footer-meta">
+              {% if site.copyright_text %}
+              <div class="copyright">Brian Runk - Web Development&nbsp;•&nbsp;&copy;&nbsp;{{ "now" | date: "%Y" }}&nbsp</div>
+              {% endif %}
+              {% assign footermenu = site.data.nav.footer | sort: 'weight'  %}
+              {% if footermenu and footermenu.size > 0 %}
+              <ul class="sub-footer-nav">
+                {% for item in footermenu %}
+                <li class="{% if item.url == page.url %}active{% endif %}">
+                  <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

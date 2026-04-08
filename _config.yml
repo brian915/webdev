@@ -1,0 +1,41 @@
+baseurl: ""
+url: ""
+permalink: pretty
+local_port: 4010
+local_livereload_port: 35739
+title: 'Brian Runk - Web Development'
+phone: "978-417-9365"
+email: "brian@brianrunk.net"
+hours_summary: ""
+copyright_text: true
+logo:
+  mobile: "assets/images/logo/logo-mobile.svg"
+  mobile_height: "40px"
+  mobile_width: "40px"
+  desktop: "assets/images/logo/logo.svg"
+  desktop_height: "40px"
+  desktop_width: "150px"
+
+socials:
+  linkedin: "linkedin,https://www.linkedin.com/in/brianrunk"
+
+address:
+  street: ""
+  street_2: ""
+  city: "Annapolis"
+  state: "MD"
+  zip: "21401"
+  country: ""
+
+collections:
+
+defaults:
+
+sass:
+  style: compressed # possible values: nested expanded compact compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+markdown: kramdown

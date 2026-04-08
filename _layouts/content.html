@@ -1,0 +1,114 @@
+---
+layout: wrapper
+---
+
+{% if page.intro_image %}
+  {% assign split_text_class = "col-12 col-md-7 col-lg-6 order-2 order-md-1" %}
+  {% assign split_media_class = "col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative" %}
+{% else %}
+  {% assign split_text_class = "col-12 col-md-8" %}
+{% endif %}
+<div class="sale-ticker d-block d-md-none" aria-label="Promotion">
+  <div class="sale-ticker-track">
+    <span>Spring Sale • 50% off regular price if you order by May 15</span>
+    <span>Spring Sale • 50% off regular price if you order by May 15</span>
+  </div>
+</div>
+<div class="intro">
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="{{ split_text_class }}">
+        {% if page.hero_title %}
+          <h1>{{ page.hero_title }}</h1>
+        {% endif %}
+
+        {% if page.hero_text %}
+          <div class="content">
+            {{ page.hero_text | markdownify }}
+          </div>
+        {% else %}
+          {{ content }}
+        {% endif %}
+
+        {% if page.show_call_box %}
+          {% include cta.html show_button=true %}
+        {% endif %}
+      </div>
+
+      {% if page.intro_image %}
+      <div class="{{ split_media_class }}">
+        <img alt="{{ page.hero_image_alt | default: page.title }}" class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relative_url }}" />
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<div class="sale-ticker d-none d-md-block" aria-label="Promotion">
+  <div class="sale-ticker-track">
+    <span>Spring Sale • 50% off regular price if you order by May 15</span>
+    <span>Spring Sale • 50% off regular price if you order by May 15</span>
+  </div>
+</div>
+{% if page.hero_text and content != blank %}
+<div class="container pb-2 pt-2">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <div class="content">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% if page.info_box_title or page.info_box_content %}
+<div class="container pb-2">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-8">
+      <div class="call">
+        <div class="call-box-top">
+          {% if page.info_box_title %}
+            <h2>{{ page.info_box_title }}</h2>
+          {% endif %}
+          {% if page.info_box_content %}
+            <div class="content">
+              {{ page.info_box_content | markdownify }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if page.main_content %}
+<div class="container pb-2 pt-2">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-8">
+      <div class="content">
+        {{ page.main_content | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if page.show_highlights and site.data.highlights %}
+<div class="strip strip-grey">
+  <div class="container pb-2 pt-2">
+        <div class="row justify-content-center">
+      {% for feature in site.data.highlights %}
+      <div class="col-12 col-md-6 col-lg-4 mb-2">
+        <div class="feature">
+          {% if feature.icon %}
+          <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.icon | relative_url }}" width="80" height="80" /></div>
+          {% endif %}
+          <h2 class="feature-title">{{ feature.title }}</h2>
+          <div class="feature-content">{{ feature.description }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,30 @@
+.intro-image {
+  width: 100%;
+  height: auto;
+  margin-top: -40px;
+}
+.intro-image-absolute {
+  max-width: none;
+  padding: 0;
+  margin: 0 auto 24px;
+  width: min(100%, 360px);
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 700px;
+    margin: 0;
+  }
+}
+.intro-image-hide-mobile {
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+}
+
+@media (max-width: 680px) {
+  .intro-image-absolute {
+    width: min(100%, 260px);
+  }
+}
