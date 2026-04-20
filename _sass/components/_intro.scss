@@ -39,6 +39,12 @@
       width: 80%;
     }
   }
+
+  .call {
+    @include media-breakpoint-up(md) {
+      width: 80%;
+    }
+  }
 }
 
 .intro-small {
