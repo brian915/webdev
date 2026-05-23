@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /styleguide.html
+Sitemap: https://brianrunk.me/sitemap.xml
