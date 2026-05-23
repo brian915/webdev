@@ -1,0 +1,548 @@
+---
+title: Brian Runk Web Development Style Guide
+permalink: /style-guide.html
+excerpt: Visual and content style guide for Brian Runk Web Development.
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Runk Web Development - Visual Style Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #325d88;
+            --accent-dark: #284a6d;
+            --secondary: #93c54b;
+            --text: #3e3f3a;
+            --background: #ffffff;
+            --background-alt: #f8f5f0;
+            --inverse: #ffffff;
+            --accent-hover: #2b4f74;
+            --border: #dfd7ca;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            font-family: Helvetica, Arial, sans-serif, -apple-system;
+            font-size: 16px;
+            line-height: 1.56;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 1180px;
+            padding: 60px 40px;
+        }
+
+        .header {
+            border-bottom: 3px solid var(--accent);
+            margin-bottom: 60px;
+            padding-bottom: 38px;
+        }
+
+        .brand-lockup {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 22px;
+        }
+
+        .brand-logo {
+            display: block;
+            height: auto;
+            max-width: 230px;
+            width: 100%;
+        }
+
+        .brand-name {
+            color: var(--text);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: var(--accent);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .supporting-line {
+            color: var(--text);
+            font-size: 17px;
+            max-width: 680px;
+        }
+
+        .section {
+            margin-bottom: 76px;
+        }
+
+        .section-title {
+            border-bottom: 2px solid var(--border);
+            color: var(--text);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+
+        .subsection-title {
+            color: var(--accent);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 34px 0 18px;
+        }
+
+        .note {
+            color: var(--text);
+            margin-bottom: 24px;
+            max-width: 760px;
+        }
+
+        .color-grid,
+        .sample-grid,
+        .undetermined-grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            margin-top: 28px;
+        }
+
+        .color-swatch,
+        .type-sample,
+        .guideline-box,
+        .component-card,
+        .undetermined-card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .color-block {
+            height: 150px;
+            width: 100%;
+        }
+
+        .color-info,
+        .type-sample,
+        .guideline-box,
+        .component-card,
+        .undetermined-card {
+            padding: 22px;
+        }
+
+        .color-name,
+        .component-card h3,
+        .guideline-box h3,
+        .undetermined-card h3 {
+            color: var(--text);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .color-hex,
+        .type-specs,
+        .blank-label {
+            color: var(--accent-dark);
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .type-label {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+
+        .type-hero {
+            color: var(--text);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(42px, 6vw, 50px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .type-section {
+            color: var(--text);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .type-content-heading {
+            color: var(--text);
+            font-family: Helvetica, Arial, sans-serif, -apple-system;
+            font-size: 26px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .type-body {
+            color: var(--text);
+            font-family: Helvetica, Arial, sans-serif, -apple-system;
+            font-size: 16px;
+            line-height: 1.56;
+        }
+
+        .button-row {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .button {
+            background: var(--accent);
+            border-radius: 4px;
+            color: var(--inverse);
+            display: inline-block;
+            font-size: 14px;
+            height: 40px;
+            letter-spacing: 0.025em;
+            line-height: 40px;
+            padding: 0 14px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .button:hover {
+            background: var(--accent-hover);
+            color: var(--inverse);
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .surface-alt {
+            background: var(--background-alt);
+        }
+
+        .surface-accent {
+            background: var(--accent);
+            color: var(--inverse);
+        }
+
+        .surface-accent h3,
+        .surface-accent p {
+            color: var(--inverse);
+        }
+
+        .call-box {
+            background: var(--background-alt);
+            border-radius: 4px;
+            padding: 22px;
+        }
+
+        .feature-card {
+            align-items: center;
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            min-height: 180px;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .feature-card img {
+            display: block;
+            height: 64px;
+            margin-bottom: 16px;
+            width: 64px;
+        }
+
+        .blank {
+            border-bottom: 1px solid var(--border);
+            display: block;
+            min-height: 28px;
+            width: 100%;
+        }
+
+        ul {
+            margin-left: 22px;
+            margin-top: 12px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 42px 20px;
+            }
+
+            .brand-lockup {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .button {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="brand-lockup">
+                <img class="brand-logo" src="{{ '/assets/images/logo/logo.svg' | relative_url }}" alt="Brian Runk Web Development logo">
+                <div>
+                    <div class="brand-name">Brian Runk</div>
+                    <div class="tagline">Simple, professional websites</div>
+                    <div class="supporting-line">Clear, modern, easy to use websites for small businesses.</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Brand Basics</h2>
+            <div class="sample-grid">
+                <article class="component-card">
+                    <h3>Site Name</h3>
+                    <p>Brian Runk - Web Development</p>
+                </article>
+                <article class="component-card">
+                    <h3>Domain</h3>
+                    <p>https://brianrunk.me</p>
+                </article>
+                <article class="component-card">
+                    <h3>Core Offer</h3>
+                    <p>Simple, professional websites for small businesses.</p>
+                </article>
+                <article class="component-card">
+                    <h3>Primary Message</h3>
+                    <p>Help your customers understand, trust and connect with your business.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Color Palette</h2>
+            <p class="note">Current palette from the active Sass token layer.</p>
+            <div class="color-grid">
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#325d88;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Accent</div>
+                        <div class="color-hex">#325d88</div>
+                        <p>Primary brand blue, buttons, links, header stripe, menu color, and emphasis text.</p>
+                    </div>
+                </article>
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#284a6d;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Accent Dark</div>
+                        <div class="color-hex">#284a6d</div>
+                        <p>Footer background, carousel controls, and darker brand emphasis.</p>
+                    </div>
+                </article>
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#93c54b;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Secondary</div>
+                        <div class="color-hex">#93c54b</div>
+                        <p>Secondary green accent used sparingly for support and callout treatments.</p>
+                    </div>
+                </article>
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#3e3f3a;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Text</div>
+                        <div class="color-hex">#3e3f3a</div>
+                        <p>Primary body copy and bold foreground text.</p>
+                    </div>
+                </article>
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#ffffff;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Background</div>
+                        <div class="color-hex">#ffffff</div>
+                        <p>Main page surface and feature cards.</p>
+                    </div>
+                </article>
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#f8f5f0;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Background Alt</div>
+                        <div class="color-hex">#f8f5f0</div>
+                        <p>Call boxes, promo ticker, and warm alternate content bands.</p>
+                    </div>
+                </article>
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#2b4f74;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Accent Hover</div>
+                        <div class="color-hex">#2b4f74</div>
+                        <p>Button hover state.</p>
+                    </div>
+                </article>
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#dfd7ca;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Border</div>
+                        <div class="color-hex">#dfd7ca</div>
+                        <p>Header divider, cards, call boxes, rules, and tables.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Typography</h2>
+            <h3 class="subsection-title">Current Web Fonts</h3>
+            <div class="type-sample">
+                <div class="type-label">Hero / Display</div>
+                <div class="type-hero">Simple, professional websites</div>
+                <div class="type-specs">Playfair Display | 42px to 50px | bold | line-height 1.2 | color #3e3f3a</div>
+            </div>
+            <div class="type-sample">
+                <div class="type-label">Section Heading</div>
+                <div class="type-section">Help customers connect</div>
+                <div class="type-specs">Playfair Display | 30px to 32px | line-height 1.2</div>
+            </div>
+            <div class="type-sample">
+                <div class="type-label">Content Heading</div>
+                <div class="type-content-heading">Straight Forward Process</div>
+                <div class="type-specs">Helvetica / Arial / system sans | 26px | weight 400 | line-height 1.4</div>
+            </div>
+            <div class="type-sample">
+                <div class="type-label">Body Text</div>
+                <div class="type-body">I build professional small-business websites presenting services, hours of operation and contact information.</div>
+                <div class="type-specs">Helvetica / Arial / system sans | 16px | line-height 1.56 | color #3e3f3a</div>
+            </div>
+
+            <h3 class="subsection-title">Current Fonts For Web, PDF, And Print</h3>
+            <div class="type-sample">
+                <div class="type-label">Headlines / Display</div>
+                <div class="type-section">Playfair Display</div>
+                <div class="type-specs">Use for web and designed PDF/print headings when the font can be embedded or reliably exported.</div>
+            </div>
+            <div class="type-sample">
+                <div class="type-label">Body / UI / Documents</div>
+                <div class="type-body">Helvetica or Arial</div>
+                <div class="type-specs">Use Helvetica or Arial explicitly for PDF and print body copy. Use the web stack fallback only for browser-rendered assets.</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Components</h2>
+            <div class="sample-grid">
+                <article class="component-card">
+                    <h3>Button</h3>
+                    <p>Small uppercase action button using brand blue, white text, and a 4px radius.</p>
+                    <div class="button-row">
+                        <a class="button" href="#">Request A Quote</a>
+                    </div>
+                </article>
+                <article class="component-card">
+                    <h3>Call Box</h3>
+                    <div class="call-box">
+                        <p><strong>Request A Quote</strong></p>
+                        <p>Email: brian@brianrunk.net</p>
+                    </div>
+                </article>
+                <article class="component-card">
+                    <h3>Feature Card</h3>
+                    <div class="feature-card">
+                        <img src="{{ '/assets/images/features/time_flies.svg' | relative_url }}" alt="">
+                        <p><strong>Fast Service</strong></p>
+                    </div>
+                </article>
+                <article class="component-card surface-accent">
+                    <h3>Accent Surface</h3>
+                    <p>Used for footer and full-screen mobile menu treatments.</p>
+                </article>
+                <article class="component-card surface-alt">
+                    <h3>Alternate Surface</h3>
+                    <p>Used for warm contrast bands, call boxes, and promotion strips.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Voice And Visual Direction</h2>
+            <div class="guideline-box">
+                <h3>Core Tone</h3>
+                <p>Plainspoken, practical, local, and service-oriented. The copy should make small-business website work feel clear and manageable.</p>
+            </div>
+            <div class="guideline-box">
+                <h3>Design Direction</h3>
+                <ul>
+                    <li>Prefer clean structure and clear hierarchy over decorative complexity.</li>
+                    <li>Use the blue palette as the primary identity signal.</li>
+                    <li>Use the green accent sparingly.</li>
+                    <li>Keep examples focused on Brian Runk Web Development, not client sub-brands.</li>
+                </ul>
+            </div>
+            <div class="guideline-box">
+                <h3>Photography Direction</h3>
+                <p>Photography should feel professional, approachable, practical, and local. Images should look like a real independent web developer helping small businesses, not a corporate stock executive or a futuristic tech campaign.</p>
+                <p>For the About page headshot, use a clean professional portrait with soft natural or studio lighting, a relaxed expression, simple clothing, and a neutral or lightly contextual background. Blue, cream, white, charcoal, and natural wood or office tones should harmonize with the current palette.</p>
+                <p>Future studio or workspace shots can show a laptop, notes, website sketches, or a clean desk setup, but the scene should remain calm and uncluttered. Avoid dramatic lighting, heavy retouching, exaggerated AI imagery, neon effects, busy offices, and generic handshake stock photography.</p>
+                <p><strong>Prompt direction:</strong> professional headshot of Brian Runk, independent web developer for small businesses, approachable and practical expression, soft natural studio lighting, clean neutral background with subtle blue and warm off-white tones, simple casual-professional clothing, realistic photography, shallow depth of field, calm local-business service aesthetic, no futuristic tech effects, no corporate stock-photo styling.</p>
+            </div>
+            <div class="guideline-box" data-undetermined="illustration-direction">
+                <h3>Illustration Direction Beyond Current Site Icons</h3>
+                <span class="blank"></span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Undetermined Elements</h2>
+            <p class="note">These fields are intentionally blank because they have not been decided for brand-support documentation and promotional assets.</p>
+            <div class="undetermined-grid">
+                <article class="undetermined-card" data-undetermined="illustration-direction">
+                    <h3>Illustration Direction Beyond Current Site Icons</h3>
+                    <span class="blank-label">blank</span>
+                </article>
+                <article class="undetermined-card" data-undetermined="social-preview-image">
+                    <h3>Share / Social Preview Image</h3>
+                    <span class="blank-label">blank</span>
+                </article>
+                <article class="undetermined-card" data-undetermined="print-document-treatment">
+                    <h3>Print / PDF Document Treatment</h3>
+                    <span class="blank-label">blank</span>
+                </article>
+                <article class="undetermined-card" data-undetermined="promotion-layout-system">
+                    <h3>Promotion Layout System</h3>
+                    <span class="blank-label">blank</span>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
