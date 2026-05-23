@@ -15,7 +15,7 @@ hero_text: |
   </div>
   <div class="col-12 col-md-6 col-lg-4">
     <b>Simple Services</b>
-    <br /><span class="text-decoration-line-through">$1,500</span>&nbsp;&nbsp;<span class="text-accent"><b><em>$750</em></b></span> Includes:
+    <br /><span class="text-decoration-line-through">$2,000</span>&nbsp;&nbsp;<span class="text-accent"><b><em>$1500</em></b></span> Includes:
     <ul>
       <li>Design and development.</li>
       <li>Updating outdated websites.</li>
