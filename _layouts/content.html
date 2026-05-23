@@ -2,12 +2,6 @@
 layout: wrapper
 ---
 
-{% if page.intro_image or page.carousel %}
-  {% assign split_text_class = "col-12 col-md-7 col-lg-6 order-2 order-md-1" %}
-  {% assign split_media_class = "col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative" %}
-{% else %}
-  {% assign split_text_class = "col-12 col-md-8" %}
-{% endif %}
 {% assign promo = site.data.promo %}
 {% if promo and promo.enabled %}
 <div class="sale-ticker d-block d-md-none" aria-label="{{ promo.aria_label | default: 'Promotion' }}">
@@ -17,41 +11,11 @@ layout: wrapper
   </div>
 </div>
 {% endif %}
-<div class="intro">
-  <div class="container">
-    <div class="row justify-content-start">
-      <div class="{{ split_text_class }}">
-        {% if page.hero_title %}
-          <h1>{{ page.hero_title }}</h1>
-        {% endif %}
-
-        {% if page.hero_text %}
-          <div class="content">
-            {{ page.hero_text | markdownify }}
-          </div>
-        {% else %}
-          {{ content }}
-        {% endif %}
-
-        {% if page.show_call_box %}
-          {% include cta.html show_button=true %}
-        {% endif %}
-      </div>
-
-      {% if page.intro_image or page.carousel %}
-      <div class="{{ split_media_class }}">
-        {% if page.carousel and site.data.carousel %}
-        <div class="intro-carousel intro-carousel-absolute">
-          {% include carousel.html %}
-        </div>
-        {% elsif page.intro_image %}
-        <img alt="{{ page.hero_image_alt | default: page.title }}" class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relative_url }}" />
-        {% endif %}
-      </div>
-      {% endif %}
-    </div>
-  </div>
-</div>
+{% if page.intro_variant == "about" %}
+  {% include intro_about.html %}
+{% else %}
+  {% include intro_home.html %}
+{% endif %}
 {% if promo and promo.enabled %}
 <div class="sale-ticker d-none d-md-block" aria-label="{{ promo.aria_label | default: 'Promotion' }}">
   <div class="sale-ticker-track">
