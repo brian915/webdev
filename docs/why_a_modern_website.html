@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Updated Website Is Essential | Brian Runk Web Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #325d88;
+            --accent-dark: #284a6d;
+            --secondary: #93c54b;
+            --text: #3e3f3a;
+            --background: #ffffff;
+            --background-alt: #f8f5f0;
+            --inverse: #ffffff;
+            --accent-hover: #2b4f74;
+            --border: #dfd7ca;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            font-family: Helvetica, Arial, sans-serif, -apple-system;
+            font-size: 16px;
+            line-height: 1.56;
+        }
+
+        h1, h2, h3 {
+            font-family: "Playfair Display", Georgia, serif;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 1180px;
+            padding: 60px 40px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: var(--background-alt);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 50px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 680px;
+            margin: 0 auto 30px auto;
+            color: var(--text);
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            background: var(--accent);
+            border-radius: 4px;
+            color: var(--inverse);
+            display: inline-block;
+            font-size: 14px;
+            height: 40px;
+            letter-spacing: 0.025em;
+            line-height: 40px;
+            padding: 0 24px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .button-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            line-height: 36px; /* Offset border width */
+        }
+
+        .button-secondary:hover {
+            background: var(--accent);
+            color: var(--inverse);
+        }
+
+        .section {
+            margin: 80px 0;
+        }
+
+        .section-title {
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 30px 22px;
+            text-align: center;
+            height: 100%;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .list-card {
+            background: var(--background-alt);
+            border-radius: 4px;
+            padding: 40px;
+            border-top: 4px solid var(--accent);
+        }
+
+        .list-card ul {
+            list-style-type: none;
+        }
+
+        .list-card li {
+            font-size: 18px;
+            margin-bottom: 16px;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .list-card li::before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .call-box {
+            background: var(--background-alt);
+            border-radius: 4px;
+            padding: 50px 40px;
+            text-align: center;
+            border: 1px solid var(--border);
+            margin-top: 60px;
+        }
+
+        .call-box h2 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .call-box p {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            font-size: 18px;
+        }
+
+        @media (max-width: 700px) {
+            .container { padding: 42px 20px; }
+            .hero { padding: 60px 20px; }
+            .button { width: 100%; text-align: center; }
+            .list-card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Your website should help customers trust you faster.</h1>
+            <p>In 2026, a small business website needs to do more than exist. It should look current, work beautifully on phones, answer basic questions, and make it effortless for people to contact you.</p>
+            <div class="button-row">
+                <a href="https://brianrunk.me" class="button">View Website Examples</a>
+                <a href="https://brianrunk.me/#contact" class="button button-secondary">Contact Brian</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="section grid-2">
+            <div>
+                <h2 style="font-size: 34px; margin-bottom: 20px;">Why This Matters Now</h2>
+                <p style="font-size: 18px;">Customers search quickly, compare options quickly, and make decisions quickly. In today's landscape, your website is often the exact moment a potential customer decides whether you are current, trustworthy, and easy to contact.</p>
+                <br>
+                <p style="font-size: 18px;">If your site looks old, loads slowly, is hard to read on mobile, or lacks clear contact information, it creates hesitation—and an outdated site may be costing you opportunities before anyone ever calls.</p>
+            </div>
+            <div class="list-card">
+                <h3 style="font-size: 24px; color: var(--text); margin-bottom: 20px;">What Customers Are Looking For:</h3>
+                <ul>
+                    <li>Can I trust this business?</li>
+                    <li>What exact services do they offer?</li>
+                    <li>Are they currently open?</li>
+                    <li>Are they located nearby?</li>
+                    <li>How do I contact them?</li>
+                    <li>Do they look active and professional?</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">What an Updated Website Improves</h2>
+            <div class="grid-3">
+                <div class="feature-card">
+                    <h3>First Impression</h3>
+                    <p>Establish professionalism immediately.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Mobile Usability</h3>
+                    <p>Deliver a smooth experience where customers actually search.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Contact Clarity</h3>
+                    <p>Make reaching you the easiest part of their day.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Search Confidence</h3>
+                    <p>Give Google a fast, readable site to present to users.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Review Support</h3>
+                    <p>Reinforce the confidence customers find in your local reviews.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Lead Conversion</h3>
+                    <p>Turn casual browsers into active inquiries.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section grid-2">
+            <div class="list-card" style="border-top-color: var(--text);">
+                <h3 style="font-size: 24px; color: var(--text); margin-bottom: 20px;">What "Updated" Actually Means</h3>
+                <ul>
+                    <li>Current, professional design</li>
+                    <li>Clear list of services</li>
+                    <li>Easy-to-find contact information</li>
+                    <li>Fast mobile experience</li>
+                    <li>Secure browsing setup</li>
+                    <li>Simple, obvious next steps</li>
+                    <li>Clean, readable copy</li>
+                    <li>Visible trust signals</li>
+                </ul>
+            </div>
+            <div style="padding-left: 20px;">
+                <h2 style="font-size: 34px; margin-bottom: 20px;">A Manageable Process</h2>
+                <p style="font-size: 18px; color: var(--accent);"><strong>Updating your website does not have to mean a massive, complicated rebuild.</strong></p>
+                <br>
+                <p style="font-size: 18px;">It simply starts with fixing the parts your customers care about the most: making your business clearer, making your site faster, and making it incredibly easy to use.</p>
+            </div>
+        </section>
+
+        <section class="call-box">
+            <h2>Ready to make a better first impression?</h2>
+            <p>See recent website and logo examples tailored specifically for small, local businesses.</p>
+            <div class="button-row">
+                <a href="https://brianrunk.me" class="button">See recent website examples at BrianRunk.me</a>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
