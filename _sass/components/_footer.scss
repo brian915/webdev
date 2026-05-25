@@ -14,7 +14,7 @@
     }
   }
   .footer-title {
-    color: _palette(fg-inverse);
+    color: _palette(bg);
     font-size: 1.3rem;
     font-family: _font(family-heading);
     font-weight: bold;
@@ -28,10 +28,10 @@
     margin: 0;
     padding: 0;
     li {
-      color: _palette(fg-inverse);
+      color: _palette(bg);
       font-size: 1rem;
       a {
-        color: _palette(fg-inverse);
+        color: _palette(bg);
         text-decoration: none;
         padding: 12px 14px 12px 0;
         display: block;

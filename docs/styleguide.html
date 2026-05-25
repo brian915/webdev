@@ -18,11 +18,11 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
             --accent: #325d88;
             --accent-dark: #284a6d;
             --secondary: #93c54b;
+	    --secondary-accent: #4E008E;
+	    --base-subtle-2: #E0DDEC;
             --text: #3e3f3a;
             --background: #ffffff;
             --background-alt: #f8f5f0;
-            --inverse: #ffffff;
-            --accent-hover: #2b4f74;
             --border: #dfd7ca;
         }
 
@@ -138,9 +138,71 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
             overflow: hidden;
         }
 
+        .color-swatch {
+            border-radius: 12px;
+            box-shadow: 0 8px 22px rgba(62, 63, 58, 0.12);
+        }
+
         .color-block {
-            height: 150px;
+            align-items: center;
+            display: flex;
+            height: 170px;
+            justify-content: center;
             width: 100%;
+        }
+
+        .color-block-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            text-transform: uppercase;
+        }
+
+        .color-block-label.dark {
+            color: var(--text);
+        }
+
+        .color-block-label.light {
+            color: var(--background);
+        }
+
+        .role-table {
+            border-collapse: collapse;
+            margin-top: 34px;
+            width: 100%;
+        }
+
+        .role-table caption {
+            color: var(--text);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .role-table th,
+        .role-table td {
+            border: 1px solid var(--border);
+            padding: 14px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .role-table th {
+            background: var(--background-alt);
+            color: var(--text);
+            font-size: 13px;
+            letter-spacing: 0.025em;
+            text-transform: uppercase;
+        }
+
+        .role-swatch {
+            border: 1px solid var(--border);
+            display: inline-block;
+            height: 28px;
+            margin-right: 10px;
+            vertical-align: middle;
+            width: 44px;
         }
 
         .color-info,
@@ -149,6 +211,10 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
         .component-card,
         .undetermined-card {
             padding: 22px;
+        }
+
+        .color-info {
+            background: var(--background);
         }
 
         .color-name,
@@ -168,6 +234,12 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
             font-family: "Courier New", monospace;
             font-size: 14px;
             margin-bottom: 12px;
+        }
+
+        .color-swatch .color-hex {
+            color: var(--text);
+            font-size: 22px;
+            font-weight: 700;
         }
 
         .type-label {
@@ -212,7 +284,127 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
             font-size: 16px;
             line-height: 1.56;
         }
+        .typeface-row {
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            gap: 42px;
+            grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr);
+            margin-bottom: 56px;
+            padding-bottom: 44px;
+        }
 
+        .typeface-row:last-of-type {
+            border-bottom: 0;
+        }
+
+        .typeface-meta {
+            border-right: 1px solid var(--border);
+            padding-right: 28px;
+        }
+
+        .typeface-name {
+            color: var(--text);
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin: 8px 0 12px;
+        }
+
+        .typeface-description {
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        .typeface-specimen {
+            color: var(--text);
+        }
+
+        .typeface-specimen .alphabet-sample {
+            font-size: clamp(42px, 6vw, 64px);
+            font-weight: 700;
+            line-height: 0.92;
+            margin-bottom: 16px;
+        }
+
+        .typeface-specimen .numeral-sample {
+            color: var(--text);
+            font-size: clamp(28px, 4vw, 46px);
+            font-weight: 400;
+            line-height: 1;
+            opacity: 0.28;
+        }
+
+        .typeface-specimen.body-font .alphabet-sample {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: clamp(34px, 5vw, 52px);
+            font-weight: 700;
+            line-height: 0.95;
+        }
+
+        .typeface-specimen.body-font .numeral-sample {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: clamp(24px, 3.5vw, 38px);
+        }
+
+        .type-hierarchy-block {
+            margin-bottom: 56px;
+        }
+
+        .type-hierarchy-example {
+            margin-bottom: 42px;
+        }
+
+        .type-hierarchy-example:last-child {
+            margin-bottom: 0;
+        }
+
+        .type-hierarchy-label {
+            color: var(--accent);
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .type-hierarchy-h1 {
+            color: var(--text);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(42px, 6vw, 64px);
+            font-weight: 700;
+            line-height: 1.05;
+        }
+
+        .type-hierarchy-h2 {
+            color: var(--accent);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(30px, 4vw, 42px);
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .type-hierarchy-grid {
+            display: grid;
+            gap: 42px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @media (max-width: 760px) {
+            .typeface-row,
+            .type-hierarchy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .typeface-meta {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 24px;
+                padding-right: 0;
+            }
+        }
         .button-row {
             align-items: center;
             display: flex;
@@ -224,7 +416,7 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
         .button {
             background: var(--accent);
             border-radius: 4px;
-            color: var(--inverse);
+            color: var(--background);
             display: inline-block;
             font-size: 14px;
             height: 40px;
@@ -238,24 +430,26 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
         }
 
         .button:hover {
-            background: var(--accent-hover);
-            color: var(--inverse);
+            background: var(--accent-dark);
+            color: var(--background);
             text-decoration: none;
             transform: translateY(-1px);
         }
-
+	.button-hover-demo {
+	    background: var(--accent-dark);
+	}
         .surface-alt {
             background: var(--background-alt);
         }
 
         .surface-accent {
             background: var(--accent);
-            color: var(--inverse);
+            color: var(--background);
         }
 
         .surface-accent h3,
         .surface-accent p {
-            color: var(--inverse);
+            color: var(--background);
         }
 
         .call-box {
@@ -337,6 +531,7 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
             </div>
         </header>
 
+
         <section class="section">
             <h2 class="section-title">Brand Basics</h2>
             <div class="sample-grid">
@@ -360,203 +555,488 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
         </section>
 
         <section class="section">
-            <h2 class="section-title">Color Palette</h2>
-            <p class="note">Current palette from the active Sass token layer.</p>
+            <h2 class="section-title">1. Color Roles &amp; Palette</h2>
+            <p class="note">Core color roles for Brian Runk Web Development, using the active site palette and the branding-guide role structure.</p>
+
             <div class="color-grid">
                 <article class="color-swatch">
-                    <div class="color-block" style="background:#325d88;"></div>
-                    <div class="color-info">
-                        <div class="color-name">Accent</div>
-                        <div class="color-hex">#325d88</div>
-                        <p>Primary brand blue, buttons, links, header stripe, menu color, and emphasis text.</p>
+                    <div class="color-block" style="background:#3e3f3a;">
+                        <span class="color-block-label light">TEXT PRIMARY</span>
                     </div>
-                </article>
-                <article class="color-swatch">
-                    <div class="color-block" style="background:#284a6d;"></div>
                     <div class="color-info">
-                        <div class="color-name">Accent Dark</div>
-                        <div class="color-hex">#284a6d</div>
-                        <p>Footer background, carousel controls, and darker brand emphasis.</p>
-                    </div>
-                </article>
-                <article class="color-swatch">
-                    <div class="color-block" style="background:#93c54b;"></div>
-                    <div class="color-info">
-                        <div class="color-name">Secondary</div>
-                        <div class="color-hex">#93c54b</div>
-                        <p>Secondary green accent used sparingly for support and callout treatments.</p>
-                    </div>
-                </article>
-                <article class="color-swatch">
-                    <div class="color-block" style="background:#3e3f3a;"></div>
-                    <div class="color-info">
-                        <div class="color-name">Text</div>
                         <div class="color-hex">#3e3f3a</div>
-                        <p>Primary body copy and bold foreground text.</p>
+                    </div>
+                </article>
+
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#325d88;">
+                        <span class="color-block-label light">ACCENT MAIN</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#325d88</div>
+                    </div>
+                </article>
+
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#284a6d;">
+                        <span class="color-block-label light">ACCENT DARK</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#284a6d</div>
                     </div>
                 </article>
                 <article class="color-swatch">
-                    <div class="color-block" style="background:#ffffff;"></div>
+                    <div class="color-block" style="background:#93c54b;">
+                        <span class="color-block-label dark">LIGHT ACCENT</span>
+                    </div>
                     <div class="color-info">
-                        <div class="color-name">Background</div>
+                        <div class="color-hex">#93c54b</div>
+                    </div>
+                </article>
+		<article class="color-swatch">
+		  <div class="color-block" style="background:#4E008E;">
+		    <span class="color-block-label light">SECONDARY ACCENT</span>
+		  </div>
+		  <div class="color-info">
+		    <div class="color-hex">#4E008E</div>
+		  </div>
+		</article>
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#a33a3a;">
+                        <span class="color-block-label light">ALERT</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#a33a3a</div>
+                    </div>
+                </article>
+
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#006f62;">
+                        <span class="color-block-label light">CONFIRMATION</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#006f62</div>
+                    </div>
+                </article>
+
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#6f716b;">
+                        <span class="color-block-label light">DIVIDER / SECONDARY TEXT</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#6f716b</div>
+                    </div>
+                </article>
+
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#ffffff;">
+                        <span class="color-block-label dark">BACKGROUND</span>
+                    </div>
+                    <div class="color-info">
                         <div class="color-hex">#ffffff</div>
-                        <p>Main page surface and feature cards.</p>
                     </div>
                 </article>
+
                 <article class="color-swatch">
-                    <div class="color-block" style="background:#f8f5f0;"></div>
+                    <div class="color-block" style="background:#f8f5f0;">
+                        <span class="color-block-label dark">SUBTLE BASE 1</span>
+                    </div>
                     <div class="color-info">
-                        <div class="color-name">Background Alt</div>
                         <div class="color-hex">#f8f5f0</div>
-                        <p>Call boxes, promo ticker, and warm alternate content bands.</p>
                     </div>
                 </article>
-                <article class="color-swatch">
-                    <div class="color-block" style="background:#2b4f74;"></div>
-                    <div class="color-info">
-                        <div class="color-name">Accent Hover</div>
-                        <div class="color-hex">#2b4f74</div>
-                        <p>Button hover state.</p>
-                    </div>
-                </article>
-                <article class="color-swatch">
-                    <div class="color-block" style="background:#dfd7ca;"></div>
-                    <div class="color-info">
-                        <div class="color-name">Border</div>
-                        <div class="color-hex">#dfd7ca</div>
-                        <p>Header divider, cards, call boxes, rules, and tables.</p>
-                    </div>
-                </article>
+		<article class="color-swatch">
+		  <div class="color-block" style="background:#E0DDEC;">
+		    <span class="color-block-label dark">SUBTLE BASE 2</span>
+		  </div>
+		  <div class="color-info">
+		    <div class="color-hex">#E0DDEC</div>
+		  </div>
+		</article>
             </div>
+
+            <table class="role-table">
+                <caption>Functional Usage Guide</caption>
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Color</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Text Primary</td>
+                        <td><span class="role-swatch" style="background:#3e3f3a;"></span><code>#3e3f3a</code></td>
+                        <td>Main body text, headings, strong foreground text, and dark neutral containers when needed.</td>
+                    </tr>
+                    <tr>
+                        <td>Accent Main</td>
+                        <td><span class="role-swatch" style="background:#325d88;"></span><code>#325d88</code></td>
+                        <td>Primary buttons, links, emphasis text, header stripe, and main brand accent.</td>
+                    </tr>
+                    <tr>
+                        <td>Accent Dark</td>
+                        <td><span class="role-swatch" style="background:#284a6d;"></span><code>#284a6d</code></td>
+                        <td>Darker accent variant for stronger contrast, dark accent surfaces, or supporting treatments as well as  hover states for primary buttons or interactive accent elements.</td>
+                    </tr>
+		    <tr>
+                    <tr>
+                        <td>Light Accent</td>
+                        <td><span class="role-swatch" style="background:#93c54b;"></span><code>#93c54b</code></td>
+                        <td>Small highlights, icon accents, light chart elements, and restrained supporting emphasis.</td>
+                    </tr>
+                    <tr>
+                        <td>Alert</td>
+                        <td><span class="role-swatch" style="background:#a33a3a;"></span><code>#a33a3a</code></td>
+                        <td>Warnings, errors, destructive action labels, and urgent notes.</td>
+                    </tr>
+                    <tr>
+                        <td>Confirmation</td>
+                        <td><span class="role-swatch" style="background:#006f62;"></span><code>#006f62</code></td>
+                        <td>Confirmation messages, affirmative action buttons, and positive UI states.</td>
+                    </tr>
+                    <tr>
+                        <td>Divider / Secondary Text</td>
+                        <td><span class="role-swatch" style="background:#6f716b;"></span><code>#6f716b</code></td>
+                        <td>Subtle dividing lines, metadata, helper text, captions, lower-priority copy, and disabled states when needed.</td>
+                    </tr>
+                    <tr>
+                        <td>Background</td>
+                        <td><span class="role-swatch" style="background:#ffffff;"></span><code>#ffffff</code></td>
+                        <td>Main page background and clean document surfaces.</td>
+                    </tr>
+                    <tr>
+                        <td>Subtle Base 1</td>
+                        <td><span class="role-swatch" style="background:#f8f5f0;"></span><code>#f8f5f0</code></td>
+                        <td>Panel backgrounds, soft content bands, call boxes, and quiet layout variation.</td>
+                    </tr>
+		    <tr>
+		      <td>Subtle Base 2</td>
+		      <td><span class="role-swatch" style="background:#E0DDEC;"></span><code>#E0DDEC</code></td>
+		      <td>Soft secondary surface adds variety to layouts, table headers, secondary cards, subtle gradient starts, and promotional assets.</td>
+		    </tr>
+                </tbody>
+            </table>
         </section>
 
+	<section class="section">
+    <h2 class="section-title">2. Typography &amp; Hierarchy</h2>
+    <p class="note">A consistent system balancing editorial warmth with practical clarity.</p>
+
+    <div class="typeface-row">
+        <div class="typeface-meta">
+            <span class="type-label">Typeface 01</span>
+            <h3 class="typeface-name" style="font-family:'Playfair Display', Georgia, serif;">Playfair Display</h3>
+            <p class="typeface-description">Reserved for high-level headings, hero text, section titles, and brand-forward editorial moments.</p>
+        </div>
+
+        <div class="typeface-specimen" style="font-family:'Playfair Display', Georgia, serif;">
+            <p class="alphabet-sample">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
+            <p class="numeral-sample">1234567890 ! @ # $ % &amp; * ( )</p>
+        </div>
+    </div>
+
+    <div class="type-hierarchy-block">
+        <div class="type-hierarchy-example">
+            <span class="type-hierarchy-label">Headline 1 — Playfair Display Bold</span>
+            <h1 class="type-hierarchy-h1">Simple, professional websites</h1>
+        </div>
+
+        <div class="type-hierarchy-example">
+            <span class="type-hierarchy-label">Headline 2 — Playfair Display Bold</span>
+            <h2 class="type-hierarchy-h2">Help customers connect</h2>
+        </div>
+    </div>
+
+    <div class="typeface-row">
+        <div class="typeface-meta">
+            <span class="type-label">Typeface 02</span>
+            <h3 class="typeface-name" style="font-family:Helvetica, Arial, sans-serif;">Helvetica / Arial</h3>
+            <p class="typeface-description">Used for body copy, UI text, buttons, forms, proposals, PDF documents, and practical support copy.</p>
+        </div>
+
+        <div class="typeface-specimen body-font">
+            <p class="alphabet-sample">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
+            <p class="numeral-sample">1234567890 ! @ # $ % &amp; * ( )</p>
+        </div>
+    </div>
+
+    <div class="type-hierarchy-grid">
+        <div class="type-hierarchy-example">
+            <span class="type-hierarchy-label">Content Heading — Helvetica / Arial Regular</span>
+            <h3 class="type-content-heading">Straight Forward Process</h3>
+        </div>
+
+        <div class="type-hierarchy-example">
+            <span class="type-hierarchy-label">Body Text — Helvetica / Arial Regular</span>
+            <p class="type-body">I build professional small-business websites presenting services, hours of operation and contact information.</p>
+        </div>
+    </div>
+
+    <h3 class="subsection-title">Print / PDF Document Treatment</h3>
+
+    <div class="guideline-box">
+        <p>Print and PDF documents should look clean, professional, and consistent with the Brian Runk Web Development website. Use the same core brand elements: the BrianRunk.me logo, Playfair Display for major headings when practical, Helvetica or Arial for body copy, the blue accent color, restrained green accents, charcoal text, white or warm off-white backgrounds, and simple dividing rules.</p>
+
+        <p>Layouts should stay practical and easy to scan. Avoid decorative complexity, heavy graphic treatments, dense color blocks, or overly designed proposal templates. Each document type should follow normal expectations for that format: proposals should have clear sections and pricing, invoices or estimates should prioritize readable line items and totals, and one-page handouts should be concise with strong hierarchy and contact information.</p>
+
+        <ul>
+            <li>Page size: US Letter, 8.5 x 11 in.</li>
+            <li>Margins: 0.6 to 0.75 in.</li>
+            <li>Header: logo top-left, optional document title top-right.</li>
+            <li>Footer: contact info, website, and page number for multi-page documents.</li>
+            <li>Heading font: Playfair Display when available, Georgia as fallback.</li>
+            <li>Body font: Helvetica or Arial.</li>
+            <li>Body size: 10.5 to 11.5 pt.</li>
+            <li>Heading color: charcoal or brand blue.</li>
+            <li>Tables: simple borders using the divider color, with no heavy fills.</li>
+            <li>Accent color: use green only for small highlights, not large blocks.</li>
+        </ul>
+
+        <p>The overall impression should be calm, organized, trustworthy, and aligned with the website rather than a separate print campaign.</p>
+    </div>
+</section>
+
+
+<section class="section">
+    <h2 class="section-title">2.2 Contrast Combinations &amp; Legibility</h2>
+    <p class="note">Approved color pairings to review for readability, hierarchy, and visual balance across website, document, survey, and promotional uses.</p>
+
+    <div class="sample-grid">
+        <article class="component-card" style="background:#ffffff; color:#3e3f3a;">
+            <h3>Background / Text Primary</h3>
+            <p><strong>Main content on white</strong></p>
+            <p>Used for primary page content, body copy, headings, and clean document surfaces.</p>
+        </article>
+
+        <article class="component-card" style="background:#f8f5f0; color:#3e3f3a;">
+            <h3>Subtle Base 1 / Text Primary</h3>
+            <p><strong>Warm surface with dark text</strong></p>
+            <p>Used for soft content bands, call boxes, quiet panels, and page variation.</p>
+        </article>
+
+        <article class="component-card" style="background:#E0DDEC; color:#3e3f3a;">
+            <h3>Subtle Base 2 / Text Primary</h3>
+            <p><strong>Soft secondary surface with dark text</strong></p>
+            <p>Used to break up blue-heavy layouts, secondary cards, table headers, and promotional assets.</p>
+        </article>
+
+        <article class="component-card" style="background:#325d88; color:#ffffff;">
+            <h3 style="color:#ffffff;">Accent Main / Background</h3>
+            <p><strong>Primary accent surface</strong></p>
+            <p>Used for primary buttons, emphasized panels, header accents, and strong brand moments.</p>
+        </article>
+
+        <article class="component-card" style="background:#284a6d; color:#ffffff;">
+            <h3 style="color:#ffffff;">Accent Dark / Background</h3>
+            <p><strong>Darker accent surface</strong></p>
+            <p>Used for stronger contrast, sub-footer treatments, and hover states for primary interactive elements.</p>
+        </article>
+
+        <article class="component-card" style="background:#4E008E; color:#ffffff;">
+            <h3 style="color:#ffffff;">Secondary Accent / Background</h3>
+            <p><strong>Bold secondary emphasis</strong></p>
+            <p>Used for non-blue emphasis in promotional assets, document highlights, callouts, and visual review elements.</p>
+        </article>
+
+        <article class="component-card" style="background:#93c54b; color:#3e3f3a;">
+            <h3>Light Accent / Text Primary</h3>
+            <p><strong>Light supporting accent</strong></p>
+            <p>Used for small highlights, icon accents, checklist marks, and restrained non-blue emphasis.</p>
+        </article>
+
+        <article class="component-card" style="background:#dfd7ca; color:#3e3f3a;">
+            <h3>Divider / Text Primary</h3>
+            <p><strong>Low-emphasis separation</strong></p>
+            <p>Used for rules, borders, table lines, quiet separators, and secondary structure.</p>
+        </article>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">3. Interaction &amp; Components</h2>
+    <p class="note">Core reusable interface and content blocks used by BrianRunk.me and related brand assets.</p>
+
+    <h3 class="subsection-title">Core Components</h3>
+
+    <div class="sample-grid">
+        <article class="component-card">
+            <h3>Primary Button</h3>
+            <p>Small uppercase action button using Accent Main, white text, and a 4px radius.</p>
+            <div class="button-row">
+                <a class="button" href="#">Request A Quote</a>
+            </div>
+        </article>
+
+        <article class="component-card">
+            <h3>Button Hover State</h3>
+            <p>Primary buttons shift from <code>#325d88</code> to <code>#284a6d</code> on hover.</p>
+            <div class="button-row">
+                <a class="button button-hover-demo" href="#">Request A Quote</a>
+            </div>
+        </article>
+
+        <article class="component-card">
+            <h3>Button With Icon</h3>
+            <p>Use Phosphor icons when a small icon helps clarify the action.</p>
+            <div class="button-row">
+                <a class="button" href="#">
+                    <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                    Request A Quote
+                </a>
+            </div>
+        </article>
+
+        <article class="component-card">
+            <h3>Call Box</h3>
+            <div class="call-box">
+                <p><strong>Request A Quote</strong></p>
+                <p>Email: brian@brianrunk.net</p>
+            </div>
+        </article>
+
+        <article class="component-card">
+            <h3>Feature Card</h3>
+            <div class="feature-card">
+                <img src="{{ '/assets/images/features/time_flies.svg' | relative_url }}" alt="">
+                <p><strong>Fast Service</strong></p>
+            </div>
+        </article>
+
+        <article class="component-card surface-accent">
+            <h3>Accent Surface</h3>
+            <p>Used for footer, full-screen mobile menu treatments, and strong accent sections.</p>
+        </article>
+
+        <article class="component-card surface-alt">
+            <h3>Subtle Surface</h3>
+            <p>Used for warm contrast bands, call boxes, and promotion strips.</p>
+        </article>
+
+        <article class="component-card" style="background:#E0DDEC;">
+            <h3>Secondary Subtle Surface</h3>
+            <p>Used for secondary cards, table headers, and visual variation in documents or promotional assets.</p>
+        </article>
+
+        <article class="component-card" style="border-top:4px solid #4E008E;">
+            <h3>Secondary Accent Callout</h3>
+            <p>Used when a section needs stronger non-blue emphasis without changing the primary brand direction.</p>
+        </article>
+    </div>
+
+    <h3 class="subsection-title">Icon Use In Components</h3>
+
+    <div class="guideline-box">
+        <p>Use Phosphor icons for interface icons, navigation icons, button icons, and small supporting icons. Icons should clarify meaning, support labels, or reinforce navigation.</p>
+
+        <ul>
+            <li>Use icons with visible text labels by default.</li>
+            <li>Let icons inherit the surrounding text color unless a deliberate accent or status treatment is needed.</li>
+            <li>Use <code>aria-hidden="true"</code> when the visible label already provides the meaning.</li>
+            <li>Use an accessible label when an icon appears without visible text.</li>
+        </ul>
+    </div>
+
+    <h3 class="subsection-title">Share / Social Preview Image</h3>
+
+    <div class="guideline-box">
+        <p>Use <code>assets/images/social/social_preview.png</code> as the primary share and social preview image for Brian Runk Web Development.</p>
+
+        <p>The social preview image should be 1200 x 630 px and exported as a PNG. It should use the professional headshot, the BrianRunk.me wordmark/logo, and the tagline in a clean layout with generous safe margins. The image should feel calm, practical, trustworthy, and consistent with the website.</p>
+
+        <ul>
+            <li>Canvas size: 1200 x 630 px.</li>
+            <li>Format: PNG.</li>
+            <li>Content: professional headshot, BrianRunk.me wordmark/logo, and tagline.</li>
+            <li>Safe margin: keep important content at least 60 px from the canvas edges.</li>
+            <li>Background: white or warm off-white.</li>
+            <li>Tagline font: Helvetica or Arial, regular weight.</li>
+            <li>Tagline color: brand blue or charcoal.</li>
+        </ul>
+
+        <p><strong>Image-generation prompt:</strong></p>
+
+        <p class="prompt-text">Create a 1200 x 630 px social preview image for Brian Runk Web Development using the attached headshot as the source image. The attached headshot is 1402 x 1122 px, so use it as the high-quality master and crop it into the layout without enlarging it beyond its clean resolution.
+
+Layout:
+- Canvas size: 1200 x 630 px.
+- Background: clean white or warm off-white, similar to #ffffff or #f8f5f0.
+- Keep all important content at least 60 px from the canvas edges.
+- Place the headshot on the left side in a clean crop area about 520 x 520 px, positioned around x=60, y=55.
+- Crop the headshot naturally so the face is centered slightly above the middle, with shoulders visible.
+- Do not alter the likeness, age, facial structure, hair, skin texture, or expression.
+- Place the BrianRunk.me wordmark/logo on the right side, about 430 px wide, positioned around x=650, y=160.
+- Add the tagline below the logo: "Simple, professional websites"
+- Tagline style: Helvetica or Arial, regular weight, around 44 px, color #325d88 or #3e3f3a.
+- Optional supporting line below the tagline: "Clear, modern websites for small businesses."
+- Supporting line style: Helvetica or Arial, regular weight, 28-30 px, color #3e3f3a.
+
+Overall style:
+Professional, calm, natural, local, and trustworthy. The image should feel like a clean small-business website preview, not a corporate ad. Use restrained spacing, simple composition, and the existing BrianRunk.me brand colors. Avoid gradients, tech effects, stock-photo styling, glamour lighting, heavy retouching, or decorative clutter.</p>
+    </div>
+</section>
+<INSERT HERE>
+
+	  
         <section class="section">
-            <h2 class="section-title">Typography</h2>
-            <h3 class="subsection-title">Current Web Fonts</h3>
-            <div class="type-sample">
-                <div class="type-label">Hero / Display</div>
-                <div class="type-hero">Simple, professional websites</div>
-                <div class="type-specs">Playfair Display | 42px to 50px | bold | line-height 1.2 | color #3e3f3a</div>
-            </div>
-            <div class="type-sample">
-                <div class="type-label">Section Heading</div>
-                <div class="type-section">Help customers connect</div>
-                <div class="type-specs">Playfair Display | 30px to 32px | line-height 1.2</div>
-            </div>
-            <div class="type-sample">
-                <div class="type-label">Content Heading</div>
-                <div class="type-content-heading">Straight Forward Process</div>
-                <div class="type-specs">Helvetica / Arial / system sans | 26px | weight 400 | line-height 1.4</div>
-            </div>
-            <div class="type-sample">
-                <div class="type-label">Body Text</div>
-                <div class="type-body">I build professional small-business websites presenting services, hours of operation and contact information.</div>
-                <div class="type-specs">Helvetica / Arial / system sans | 16px | line-height 1.56 | color #3e3f3a</div>
+            <h2 class="section-title">4. Icon Use</h2>
+            <p class="note">Icons should clarify meaning at a glance. The current feature icons function more like simple spot illustrations, but future traditional icons should follow the same visual language.</p>
+
+            <h3 class="subsection-title">Icon System Note</h3>
+
+            <div class="guideline-box">
+                <p>The current site does not use a formal icon library. The large feature icons currently in use function more like simple spot illustrations than traditional interface icons. They were selected from The Noun Project and manually modified in Adobe Illustrator to create a unified site style.</p>
+
+                <p>Future icon use should treat these existing feature icons as the visual reference. Smaller interface icons, navigation icons, button icons, and label-support icons should follow the same general style: simple, practical, service-oriented, mostly black or charcoal linework, minimal fills, rounded stroke endings, restrained detail, and limited use of the light green accent.</p>
+
+                <p>If a reusable icon library is adopted later, it should be chosen because it visually harmonizes with the existing Noun Project-derived feature illustrations. The library should support the current icon direction, not replace it with a different visual language.</p>
             </div>
 
-            <h3 class="subsection-title">Current Fonts For Web, PDF, And Print</h3>
-            <div class="type-sample">
-                <div class="type-label">Headlines / Display</div>
-                <div class="type-section">Playfair Display</div>
-                <div class="type-specs">Use for web and designed PDF/print headings when the font can be embedded or reliably exported.</div>
-            </div>
-            <div class="type-sample">
-                <div class="type-label">Body / UI / Documents</div>
-                <div class="type-body">Helvetica or Arial</div>
-                <div class="type-specs">Use Helvetica or Arial explicitly for PDF and print body copy. Use the web stack fallback only for browser-rendered assets.</div>
-            </div>
-        </section>
+            <h3 class="subsection-title">Feature Icon Direction</h3>
 
-        <section class="section">
-            <h2 class="section-title">Components</h2>
-            <div class="sample-grid">
-                <article class="component-card">
-                    <h3>Button</h3>
-                    <p>Small uppercase action button using brand blue, white text, and a 4px radius.</p>
-                    <div class="button-row">
-                        <a class="button" href="#">Request A Quote</a>
-                    </div>
-                </article>
-                <article class="component-card">
-                    <h3>Call Box</h3>
-                    <div class="call-box">
-                        <p><strong>Request A Quote</strong></p>
-                        <p>Email: brian@brianrunk.net</p>
-                    </div>
-                </article>
-                <article class="component-card">
-                    <h3>Feature Card</h3>
-                    <div class="feature-card">
-                        <img src="{{ '/assets/images/features/time_flies.svg' | relative_url }}" alt="">
-                        <p><strong>Fast Service</strong></p>
-                    </div>
-                </article>
-                <article class="component-card surface-accent">
-                    <h3>Accent Surface</h3>
-                    <p>Used for footer and full-screen mobile menu treatments.</p>
-                </article>
-                <article class="component-card surface-alt">
-                    <h3>Alternate Surface</h3>
-                    <p>Used for warm contrast bands, call boxes, and promotion strips.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Voice And Visual Direction</h2>
             <div class="guideline-box">
-                <h3>Core Tone</h3>
-                <p>Plainspoken, practical, local, and service-oriented. The copy should make small-business website work feel clear and manageable.</p>
-            </div>
-            <div class="guideline-box">
-                <h3>Written Voice / Copy Tone</h3>
-                <p>Written communication should follow the same plainspoken, practical style as the website. This applies to site copy, emails, proposals, promotions, surveys, quizzes, one-pagers, and future brand-support materials.</p>
-                <ul>
-                    <li>Choose clear over clever.</li>
-                    <li>Be helpful, not salesy.</li>
-                    <li>Keep the tone practical and calm.</li>
-                    <li>Write in a local and small-business friendly way.</li>
-                    <li>Avoid hype, jargon, tech posturing, and corporate polish.</li>
-                    <li>Explain process simply.</li>
-                    <li>Make website work feel manageable and trustworthy.</li>
-                </ul>
-                <p>This section can be expanded as one-pagers, surveys, quizzes, and other written materials are created.</p>
-            </div>
-            <div class="guideline-box">
-                <h3>Design Direction</h3>
-                <ul>
-                    <li>Prefer clean structure and clear hierarchy over decorative complexity.</li>
-                    <li>Use the blue palette as the primary identity signal.</li>
-                    <li>Use the green accent sparingly.</li>
-                    <li>Keep examples focused on Brian Runk Web Development, not client sub-brands.</li>
-                </ul>
-            </div>
-            <div class="guideline-box">
-                <h3>Feature Icon Direction</h3>
                 <p>The current feature icons are sourced from The Noun Project and manually modified in Adobe Illustrator to create a unified site style. The source concepts are finger snapping, cell phone, and fast/speed.</p>
+
                 <ul>
                     <li>Finger snapping: <a href="https://thenounproject.com/icon/finger-snapping-4987623/">The Noun Project source</a></li>
                     <li>Cell phone: <a href="https://thenounproject.com/icon/cell-phone-167463/">The Noun Project source</a></li>
                     <li>Fast/speed: <a href="https://thenounproject.com/icon/fast-7335232/">The Noun Project source</a></li>
                     <li>Fast/speed: <a href="https://thenounproject.com/icon/fast-5933095/">The Noun Project source</a></li>
                 </ul>
+
                 <p>The finished icon style is simple, practical, and service-oriented. Icons use clean black or charcoal linework, minimal fills, rounded stroke endings, and a restrained amount of detail. Each icon is adapted to feel like part of the same set by normalizing stroke weight, simplifying unnecessary detail, aligning proportions, and applying the site accent green only as a small highlight rather than a dominant color.</p>
+
                 <p>To replicate the style, start with a simple outline icon, reduce it to its clearest readable form, keep the primary drawing black/charcoal, use white or transparent negative space, and add green only where it supports the idea or creates visual emphasis. Avoid full-color icons, heavy fills, complex gradients, mismatched stroke weights, or overly decorative illustration detail.</p>
             </div>
+
+            <h3 class="subsection-title">Illustration Direction</h3>
+
             <div class="guideline-box">
-                <h3>Illustration Direction</h3>
                 <p>The original illustration direction came from <a href="https://icons8.com/illustrations/style--pixeltrue">Icons8 Pixeltrue illustrations</a>. These were used as a broader visual reference for friendly web-service imagery: flat vector scenes, approachable human figures, simplified workspaces, clean shapes, and a limited palette.</p>
-                <p>For this project, the illustration direction was modified toward a more unified brand look by reducing the palette, emphasizing black/gray/white structure, and using the site green as an accent. The goal was to make the illustrations feel less like generic stock artwork and more consistent with the site's practical, small-business web development tone.</p>
+
+                <p>For this project, the illustration direction was modified toward a more unified brand look by reducing the palette, emphasizing black/gray/white structure, and using the site green as an accent. The goal was to make the illustrations feel less like generic stock artwork and more consistent with the site&39;practical, small-business web development tone.</p>
+
                 <p>This illustration direction is now mostly superseded by photography for the current site, especially for the About page and portfolio/gallery direction. If illustrations are used again, they should stay flat, simple, lightly human, and restrained, with the same black/gray/white base and limited green accent treatment.</p>
             </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">5. Photography &amp; Image Direction</h2>
+
+            <h3 class="subsection-title">5.1 Photography Direction</h3>
+
             <div class="guideline-box">
-                <h3>Photography Direction</h3>
                 <p>Photography should feel professional, natural, grounded, and credible for a local independent web developer serving small businesses. Images should look like real photographs from a good local photographer, not a corporate stock campaign or futuristic technology brand.</p>
+
                 <p>Use naturalistic light, believable human expression, clean but lived-in working environments, and restrained colors that harmonize with the blue, green, charcoal, white, and warm off-white palette. Website/gallery images, About imagery, workspace images, and future brand photos should support trust, clarity, and practical competence.</p>
+
                 <p>Avoid corporate stock-photo polish, futuristic tech styling, glamour lighting, dramatic executive portrait lighting, exaggerated retouching, AI-generated portrait artifacts, neon effects, busy office scenes, generic handshake photography, and overly idealized or artificial people.</p>
             </div>
+
+            <h3 class="subsection-title">5.2 Headshot Prompt</h3>
+
             <div class="guideline-box">
-                <h3>Headshot Prompt</h3>
                 <p class="prompt-text">Use the uploaded photos as the only visual references for my likeness.
 
 Create a professional but natural headshot of me as an independent web developer for small businesses. Preserve my real facial structure, age, hairline, hair shape, eye shape, brow, nose, jawline, light stubble, skin tone, and natural facial asymmetry from the reference photos.
@@ -577,8 +1057,10 @@ Overall feel: a real, trustworthy local small-business website photo. Independen
 
 Do not use futuristic tech effects, corporate stock-photo styling, glamour lighting, dramatic executive portrait lighting, overly formal clothing, artificial-looking skin, AI-smoothed expression, exaggerated beauty correction, or an unflattering documentary look.</p>
             </div>
+
+            <h3 class="subsection-title">5.3 Generalized Photo / Image Prompt</h3>
+
             <div class="guideline-box">
-                <h3>Generalized Photo / Image Prompt</h3>
                 <p class="prompt-text">Create a professional but natural photograph for Brian Runk Web Development, an independent web developer serving small businesses. The image should feel believable, grounded, approachable, practical, and credible, like it was taken by a good local photographer for a real small-business website.
 
 Use naturalistic lighting, realistic shadows, restrained color, and a calm composition. Keep the palette compatible with muted blue, charcoal, white, warm off-white, and small green accent tones. The scene should feel clean and professional without becoming sterile, glossy, theatrical, futuristic, or corporate.
@@ -587,63 +1069,37 @@ If people appear, they should look like real people with natural expression, rea
 
 If the image shows a workspace, website process, client work, or small-business context, keep it uncluttered and specific: a laptop, notes, simple desk setup, website sketches, practical tools, or a believable local business environment. Avoid busy offices, exaggerated tech visuals, neon effects, fake holograms, generic handshake scenes, glamour lighting, over-retouching, artificial-looking skin, and obvious AI-generated artifacts.</p>
             </div>
-            <div class="guideline-box">
-                <h3>Print / PDF Document Treatment</h3>
-                <p>Print and PDF documents should look clean, professional, and consistent with the Brian Runk Web Development website. Use the same core brand elements: the BrianRunk.me logo, Playfair Display for major headings when practical, Helvetica or Arial for body copy, the blue accent color, restrained green accents, charcoal text, white or warm off-white backgrounds, and simple dividing rules.</p>
-                <p>Layouts should stay practical and easy to scan. Avoid decorative complexity, heavy graphic treatments, dense color blocks, or overly designed proposal templates. Each document type should follow normal expectations for that format: proposals should have clear sections and pricing, invoices or estimates should prioritize readable line items and totals, and one-page handouts should be concise with strong hierarchy and contact information.</p>
-                <ul>
-                    <li>Page size: US Letter, 8.5 x 11 in.</li>
-                    <li>Margins: 0.6 to 0.75 in.</li>
-                    <li>Header: logo top-left, optional document title top-right.</li>
-                    <li>Footer: contact info, website, and page number for multi-page documents.</li>
-                    <li>Heading font: Playfair Display when available, Georgia as fallback.</li>
-                    <li>Body font: Helvetica or Arial.</li>
-                    <li>Body size: 10.5 to 11.5 pt.</li>
-                    <li>Heading color: charcoal or brand blue.</li>
-                    <li>Tables: simple borders using #dfd7ca, with no heavy fills.</li>
-                    <li>Accent color: use green only for small highlights, not large blocks.</li>
-                </ul>
-                <p>The overall impression should be calm, organized, trustworthy, and aligned with the website rather than a separate print campaign.</p>
-            </div>
-            <div class="guideline-box">
-                <h3>Promotion Layout System</h3>
-                <p>Promotional graphics should follow the visual style of the Brian Runk Web Development website unless a specific campaign defines a new variation. Use the existing logo, color palette, typography, photography direction, icon style, and calm professional tone as the default starting point.</p>
-                <p>Layouts should be appropriate to the graphic type and use case. Social posts, announcements, small ads, service graphics, and seasonal promotions do not need to share one rigid template, but they should feel clearly connected to the same brand. Keep compositions simple, readable, practical, and service-oriented.</p>
-                <p>This section should be updated as real graphics and promotions are created, with examples, dimensions, reusable layout patterns, and any campaign-specific variations.</p>
-            </div>
-            <div class="guideline-box">
-                <h3>Share / Social Preview Image</h3>
-                <p>Use <code>assets/images/social/social_preview.png</code> as the primary share and social preview image for Brian Runk Web Development.</p>
-                <p>The social preview image should be 1200 x 630 px and exported as a PNG. It should use the professional headshot, the BrianRunk.me wordmark/logo, and the tagline in a clean layout with generous safe margins. The image should feel calm, practical, trustworthy, and consistent with the website.</p>
-                <ul>
-                    <li>Canvas size: 1200 x 630 px.</li>
-                    <li>Format: PNG.</li>
-                    <li>Content: professional headshot, BrianRunk.me wordmark/logo, and tagline.</li>
-                    <li>Safe margin: keep important content at least 60 px from the canvas edges.</li>
-                    <li>Background: white or warm off-white.</li>
-                    <li>Tagline font: Helvetica or Arial, regular weight.</li>
-                    <li>Tagline color: brand blue or charcoal.</li>
-                </ul>
-                <p><strong>Image-generation prompt:</strong></p>
-                <p class="prompt-text">Create a 1200 x 630 px social preview image for Brian Runk Web Development using the attached headshot as the source image. The attached headshot is 1402 x 1122 px, so use it as the high-quality master and crop it into the layout without enlarging it beyond its clean resolution.
+        </section>
 
-Layout:
-- Canvas size: 1200 x 630 px.
-- Background: clean white or warm off-white, similar to #ffffff or #f8f5f0.
-- Keep all important content at least 60 px from the canvas edges.
-- Place the headshot on the left side in a clean crop area about 520 x 520 px, positioned around x=60, y=55.
-- Crop the headshot naturally so the face is centered slightly above the middle, with shoulders visible.
-- Do not alter the person's likeness, age, facial structure, hair, skin texture, or expression.
-- Place the BrianRunk.me wordmark/logo on the right side, about 430 px wide, positioned around x=650, y=160.
-- Add the tagline below the logo: "Simple, professional websites"
-- Tagline style: Helvetica or Arial, regular weight, around 44 px, color #325d88 or #3e3f3a.
-- Optional supporting line below the tagline: "Clear, modern websites for small businesses."
-- Supporting line style: Helvetica or Arial, regular weight, 28-30 px, color #3e3f3a.
+        <section class="section">
+            <h2 class="section-title">6. Voice &amp; Copy Direction</h2>
 
-Overall style:
-Professional, calm, natural, local, and trustworthy. The image should feel like a clean small-business website preview, not a corporate ad. Use restrained spacing, simple composition, and the existing BrianRunk.me brand colors. Avoid gradients, tech effects, stock-photo styling, glamour lighting, heavy retouching, or decorative clutter.</p>
+            <h3 class="subsection-title">6.1 Core Tone</h3>
+
+            <div class="guideline-box">
+                <p>Plainspoken, practical, local, and service-oriented. The copy should make small-business website work feel clear and manageable.</p>
+            </div>
+
+            <h3 class="subsection-title">6.2 Written Voice / Copy Tone</h3>
+
+            <div class="guideline-box">
+                <p>Written communication should follow the same plainspoken, practical style as the website. This applies to site copy, emails, proposals, promotions, surveys, quizzes, one-pagers, and future brand-support materials.</p>
+
+                <ul>
+                    <li>Choose clear over clever.</li>
+                    <li>Be helpful, not salesy.</li>
+                    <li>Keep the tone practical and calm.</li>
+                    <li>Write in a local and small-business friendly way.</li>
+                    <li>Avoid hype, jargon, tech posturing, and corporate polish.</li>
+                    <li>Explain process simply.</li>
+                    <li>Make website work feel manageable and trustworthy.</li>
+                </ul>
+
+                <p>This section can be expanded as one-pagers, surveys, quizzes, and other written materials are created.</p>
             </div>
         </section>
+
+
     </main>
 </body>
 </html>

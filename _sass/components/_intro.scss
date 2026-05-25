@@ -10,7 +10,7 @@
     padding-bottom: 18px;
   }
   h1 {
-    color: _palette(fg-bold);
+    color: _palette(fg);
     font-size: 42px;
     font-weight: bold;
     line-height: 1.2;
@@ -27,7 +27,7 @@
     font-size: 1.2rem;
     line-height: 1.4;
     margin-bottom: 30px;
-    color: _palette(fg-bold);
+    color: _palette(fg);
     font-family: _font(family);
   }
   p {

@@ -1,6 +1,6 @@
 .sub-footer {
   background: _palette(accent-dark);
-  color: _palette(fg-inverse);
+  color: _palette(bg);
   padding-top: 15px;
   padding-bottom: 15px;
   @include media-breakpoint-up(md) {

@@ -1,0 +1,213 @@
+.modern-website-page {
+  background: _palette(bg);
+}
+
+.modern-website-hero {
+  background-color: _palette(bg-alt);
+  border-bottom: 1px solid _palette(border);
+  padding: 60px 0;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    padding: 80px 0;
+  }
+}
+
+.modern-website-hero h1 {
+  color: _palette(fg);
+  font-family: _font(family-heading);
+  font-size: clamp(40px, 6vw, 50px);
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0 auto 20px;
+  max-width: 800px;
+}
+
+.modern-website-hero p {
+  color: _palette(fg);
+  font-size: 18px;
+  line-height: 1.56;
+  margin: 0 auto 30px;
+  max-width: 680px;
+}
+
+.modern-website-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.modern-website-button-row .button {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.modern-website-button-row .button-secondary {
+  background: transparent;
+  border: 2px solid _palette(accent);
+  color: _palette(accent);
+  line-height: 36px;
+}
+
+.modern-website-button-row .button-secondary:hover {
+  background: _palette(accent);
+  color: _palette(bg);
+}
+
+.modern-website-main {
+  padding-bottom: 60px;
+  padding-top: 20px;
+}
+
+.modern-website-section {
+  margin: 60px 0;
+
+  @include media-breakpoint-up(md) {
+    margin: 80px 0;
+  }
+}
+
+.modern-website-section h2,
+.modern-website-section-title {
+  color: _palette(fg);
+  font-family: _font(family-heading);
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.modern-website-section-title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.modern-website-lede {
+  font-size: 18px;
+  line-height: 1.56;
+}
+
+.modern-website-emphasis {
+  color: _palette(accent);
+  font-size: 18px;
+  line-height: 1.56;
+}
+
+.modern-website-copy-offset {
+  @include media-breakpoint-up(md) {
+    padding-left: 20px;
+  }
+}
+
+.modern-website-checklist {
+  background: _palette(bg-alt);
+  border-radius: 4px;
+  border-top: 4px solid _palette(accent);
+  padding: 30px 20px;
+
+  @include media-breakpoint-up(md) {
+    padding: 40px;
+  }
+}
+
+.modern-website-checklist-dark {
+  border-top-color: _palette(fg);
+}
+
+.modern-website-checklist h3 {
+  color: _palette(fg);
+  font-family: _font(family-heading);
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.modern-website-checklist ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.modern-website-checklist li {
+  color: _palette(fg);
+  font-size: 18px;
+  line-height: 1.56;
+  margin-bottom: 16px;
+  padding-left: 28px;
+  position: relative;
+}
+
+.modern-website-checklist li::before {
+  border-bottom: 3px solid _palette(secondary);
+  border-right: 3px solid _palette(secondary);
+  content: "";
+  height: 12px;
+  left: 3px;
+  position: absolute;
+  top: 5px;
+  transform: rotate(45deg);
+  width: 6px;
+}
+
+.modern-website-feature-grid .feature {
+  padding: 30px 22px;
+}
+
+.modern-website-feature-grid .feature-title {
+  color: _palette(accent);
+  font-family: _font(family-heading);
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.modern-website-feature-grid .feature-content {
+  margin-top: 0;
+}
+
+.modern-website-cta {
+  background: _palette(bg-alt);
+  border: 1px solid _palette(border);
+  border-radius: 4px;
+  margin-top: 60px;
+  padding: 40px 20px;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    padding: 50px 40px;
+  }
+}
+
+.modern-website-cta h2 {
+  color: _palette(fg);
+  font-family: _font(family-heading);
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.modern-website-cta p {
+  font-size: 18px;
+  line-height: 1.56;
+  margin: 0 auto 30px;
+  max-width: 600px;
+}
+
+@media (max-width: 700px) {
+  .modern-website-button-row .button {
+    align-items: center;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    line-height: 1.3;
+    min-height: 40px;
+    padding-bottom: 11px;
+    padding-top: 11px;
+    text-align: center;
+    white-space: normal;
+    width: 100%;
+  }
+}
