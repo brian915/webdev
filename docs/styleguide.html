@@ -13,6 +13,7 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <style>
         :root {
             --accent: #325d88;
@@ -42,14 +43,27 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
 
         .container {
             margin: 0 auto;
-            max-width: 1180px;
-            padding: 60px 40px;
+            max-width: 1360px;
+            padding: 96px 48px 120px;
+        }
+
+        .content-standard {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1080px;
+        }
+
+        .content-wide {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1240px;
         }
 
         .header {
-            border-bottom: 3px solid var(--accent);
-            margin-bottom: 60px;
-            padding-bottom: 38px;
+            border-bottom: 1px solid var(--border);
+            margin: 0 auto 84px;
+            max-width: 1080px;
+            padding-bottom: 42px;
         }
 
         .brand-lockup {
@@ -89,18 +103,23 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
         }
 
         .section {
-            margin-bottom: 76px;
+            margin: 0 auto 96px;
+            max-width: 1080px;
+        }
+
+        .section-wide {
+            max-width: 1240px;
         }
 
         .section-title {
-            border-bottom: 2px solid var(--border);
+            border-left: 4px solid var(--accent);
             color: var(--text);
             font-family: "Playfair Display", Georgia, serif;
-            font-size: 34px;
+            font-size: clamp(36px, 4vw, 48px);
             font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
+            line-height: 1.12;
+            margin-bottom: 34px;
+            padding-left: 18px;
         }
 
         .subsection-title {
@@ -139,14 +158,14 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
         }
 
         .color-swatch {
-            border-radius: 12px;
-            box-shadow: 0 8px 22px rgba(62, 63, 58, 0.12);
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(62, 63, 58, 0.14);
         }
 
         .color-block {
             align-items: center;
             display: flex;
-            height: 170px;
+            height: 128px;
             justify-content: center;
             width: 100%;
         }
@@ -154,7 +173,7 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
         .color-block-label {
             font-size: 12px;
             font-weight: 700;
-            letter-spacing: 0.025em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
@@ -189,20 +208,21 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
         }
 
         .role-table th {
-            background: var(--background-alt);
+            background: var(--base-subtle-2);
             color: var(--text);
             font-size: 13px;
-            letter-spacing: 0.025em;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
         }
 
         .role-swatch {
             border: 1px solid var(--border);
+            border-radius: 6px;
             display: inline-block;
-            height: 28px;
-            margin-right: 10px;
+            height: 34px;
+            margin-right: 12px;
             vertical-align: middle;
-            width: 44px;
+            width: 56px;
         }
 
         .color-info,
@@ -215,6 +235,136 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
 
         .color-info {
             background: var(--background);
+        }
+
+        .contrast-stack {
+            display: grid;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .contrast-block {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 34px;
+        }
+
+        .contrast-block .label-text {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .contrast-block strong {
+            display: block;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 700;
+            line-height: 1.12;
+            margin-bottom: 10px;
+        }
+
+        .contrast-block p {
+            max-width: 720px;
+        }
+
+        .component-context {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            margin-bottom: 30px;
+            padding: 30px;
+        }
+
+        .component-context-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .component-context.dark {
+            background: var(--accent-dark);
+            color: var(--background);
+        }
+
+        .component-context.dark .component-context-label,
+        .component-context.dark p {
+            color: var(--background);
+        }
+
+        .component-context.secondary {
+            background: var(--base-subtle-2);
+        }
+
+        .icon-guide-row {
+            display: grid;
+            gap: 42px;
+            grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+            margin-bottom: 42px;
+        }
+
+        .icon-guide-meta {
+            border-right: 1px solid var(--border);
+            padding-right: 28px;
+        }
+
+        .icon-guide-panel {
+            background: var(--background-alt);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .icon-guide-panel.dark {
+            background: var(--accent-dark);
+            color: var(--background);
+        }
+
+        .icon-guide-panel.dark code,
+        .icon-guide-panel.dark pre,
+        .icon-guide-panel.dark p {
+            color: var(--background);
+        }
+
+        .icon-example-row {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .icon-example {
+            align-items: center;
+            display: inline-flex;
+            gap: 10px;
+        }
+
+        .icon-example i {
+            font-size: 24px;
+        }
+
+        .icon-size-grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .icon-size-sample {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .icon-code-block {
+            font-family: "Courier New", monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            white-space: pre-wrap;
         }
 
         .color-name,
@@ -288,10 +438,10 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
             align-items: flex-start;
             border-bottom: 1px solid var(--border);
             display: grid;
-            gap: 42px;
-            grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr);
-            margin-bottom: 56px;
-            padding-bottom: 44px;
+            gap: 56px;
+            grid-template-columns: minmax(220px, 1fr) minmax(0, 2.4fr);
+            margin-bottom: 72px;
+            padding-bottom: 56px;
         }
 
         .typeface-row:last-of-type {
@@ -322,18 +472,18 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
         }
 
         .typeface-specimen .alphabet-sample {
-            font-size: clamp(42px, 6vw, 64px);
+            font-size: clamp(52px, 7vw, 76px);
             font-weight: 700;
-            line-height: 0.92;
-            margin-bottom: 16px;
+            line-height: 0.88;
+            margin-bottom: 18px;
         }
 
         .typeface-specimen .numeral-sample {
             color: var(--text);
-            font-size: clamp(28px, 4vw, 46px);
-            font-weight: 400;
+            font-size: clamp(34px, 4.5vw, 54px);
+            font-weight: 700;
             line-height: 1;
-            opacity: 0.28;
+            opacity: 0.26;
         }
 
         .typeface-specimen.body-font .alphabet-sample {
@@ -404,6 +554,18 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
                 padding-bottom: 24px;
                 padding-right: 0;
             }
+
+            .icon-guide-row,
+            .icon-size-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .icon-guide-meta {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 24px;
+                padding-right: 0;
+            }
         }
         .button-row {
             align-items: center;
@@ -438,6 +600,144 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
 	.button-hover-demo {
 	    background: var(--accent-dark);
 	}
+
+        .button-secondary {
+            background: var(--secondary);
+            color: var(--text);
+        }
+
+        .button-secondary:hover {
+            background: var(--secondary);
+            color: var(--text);
+            transform: translateY(-1px);
+        }
+
+        .button-secondary-accent {
+            background: var(--secondary-accent);
+            color: var(--background);
+        }
+
+        .button-secondary-accent:hover {
+            background: var(--secondary-accent);
+            color: var(--background);
+            transform: translateY(-1px);
+        }
+
+        .button-outline {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .button-outline:hover {
+            background: var(--background-alt);
+            color: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .button-alert {
+            background: #a33a3a;
+            color: var(--background);
+        }
+
+        .button-alert:hover {
+            background: #a33a3a;
+            color: var(--background);
+            transform: translateY(-1px);
+        }
+
+        .button-confirmation {
+            background: #006f62;
+            color: var(--background);
+        }
+
+        .button-confirmation:hover {
+            background: #006f62;
+            color: var(--background);
+            transform: translateY(-1px);
+        }
+
+        .button-disabled,
+        .button-disabled:hover {
+            background: var(--border);
+            color: var(--text);
+            cursor: not-allowed;
+            opacity: 0.65;
+            transform: none;
+        }
+
+        .button-small {
+            font-size: 12px;
+            height: 34px;
+            line-height: 34px;
+            padding: 0 12px;
+        }
+
+        .button-large {
+            font-size: 16px;
+            height: 48px;
+            line-height: 48px;
+            padding: 0 22px;
+        }
+
+        .component-demo-stack {
+            display: grid;
+            gap: 30px;
+            margin-top: 28px;
+        }
+
+        .component-demo-panel {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .component-demo-panel.light {
+            background: var(--background);
+        }
+
+        .component-demo-panel.warm {
+            background: var(--background-alt);
+        }
+
+        .component-demo-panel.secondary {
+            background: var(--base-subtle-2);
+        }
+
+        .component-demo-panel.dark {
+            background: var(--accent-dark);
+            color: var(--background);
+        }
+
+        .component-demo-panel.dark .component-demo-label,
+        .component-demo-panel.dark p {
+            color: var(--background);
+        }
+
+        .component-demo-panel.dark .button-outline {
+            border-color: var(--background);
+            color: var(--background);
+        }
+
+        .component-demo-panel.dark .button-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--background);
+        }
+
+        .component-demo-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .component-demo-note {
+            margin-top: 18px;
+            max-width: 760px;
+        }
+
         .surface-alt {
             background: var(--background-alt);
         }
@@ -554,7 +854,7 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
             </div>
         </section>
 
-        <section class="section">
+        <section class="section section-wide">
             <h2 class="section-title">1. Color Roles &amp; Palette</h2>
             <p class="note">Core color roles for Brian Runk Web Development, using the active site palette and the branding-guide role structure.</p>
 
@@ -620,11 +920,11 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
                 </article>
 
                 <article class="color-swatch">
-                    <div class="color-block" style="background:#6f716b;">
+                    <div class="color-block" style="background:#dfd7ca;">
                         <span class="color-block-label light">DIVIDER / SECONDARY TEXT</span>
                     </div>
                     <div class="color-info">
-                        <div class="color-hex">#6f716b</div>
+                        <div class="color-hex">#dfd7ca</div>
                     </div>
                 </article>
 
@@ -680,7 +980,6 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
                         <td><span class="role-swatch" style="background:#284a6d;"></span><code>#284a6d</code></td>
                         <td>Darker accent variant for stronger contrast, dark accent surfaces, or supporting treatments as well as  hover states for primary buttons or interactive accent elements.</td>
                     </tr>
-		    <tr>
                     <tr>
                         <td>Light Accent</td>
                         <td><span class="role-swatch" style="background:#93c54b;"></span><code>#93c54b</code></td>
@@ -698,7 +997,7 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
                     </tr>
                     <tr>
                         <td>Divider / Secondary Text</td>
-                        <td><span class="role-swatch" style="background:#6f716b;"></span><code>#6f716b</code></td>
+                        <td><span class="role-swatch" style="background:#dfd7ca;"></span><code>#dfd7ca</code></td>
                         <td>Subtle dividing lines, metadata, helper text, captions, lower-priority copy, and disabled states when needed.</td>
                     </tr>
                     <tr>
@@ -799,64 +1098,127 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
 </section>
 
 
-<section class="section">
+<section class="section section-wide">
     <h2 class="section-title">2.2 Contrast Combinations &amp; Legibility</h2>
     <p class="note">Approved color pairings to review for readability, hierarchy, and visual balance across website, document, survey, and promotional uses.</p>
 
-    <div class="sample-grid">
-        <article class="component-card" style="background:#ffffff; color:#3e3f3a;">
-            <h3>Background / Text Primary</h3>
-            <p><strong>Main content on white</strong></p>
+    <div class="contrast-stack">
+        <article class="contrast-block" style="background:#ffffff; color:#3e3f3a;">
+            <span class="label-text">Background / Text Primary</span>
+            <strong>Main content on white</strong>
             <p>Used for primary page content, body copy, headings, and clean document surfaces.</p>
         </article>
 
-        <article class="component-card" style="background:#f8f5f0; color:#3e3f3a;">
-            <h3>Subtle Base 1 / Text Primary</h3>
-            <p><strong>Warm surface with dark text</strong></p>
+        <article class="contrast-block" style="background:#f8f5f0; color:#3e3f3a;">
+            <span class="label-text">Subtle Base 1 / Text Primary</span>
+            <strong>Warm surface with dark text</strong>
             <p>Used for soft content bands, call boxes, quiet panels, and page variation.</p>
         </article>
 
-        <article class="component-card" style="background:#E0DDEC; color:#3e3f3a;">
-            <h3>Subtle Base 2 / Text Primary</h3>
-            <p><strong>Soft secondary surface with dark text</strong></p>
+        <article class="contrast-block" style="background:#E0DDEC; color:#3e3f3a;">
+            <span class="label-text">Subtle Base 2 / Text Primary</span>
+            <strong>Soft secondary surface with dark text</strong>
             <p>Used to break up blue-heavy layouts, secondary cards, table headers, and promotional assets.</p>
         </article>
 
-        <article class="component-card" style="background:#325d88; color:#ffffff;">
-            <h3 style="color:#ffffff;">Accent Main / Background</h3>
-            <p><strong>Primary accent surface</strong></p>
+        <article class="contrast-block" style="background:#325d88; color:#ffffff;">
+            <span class="label-text">Accent Main / Background</span>
+            <strong>Primary accent surface</strong>
             <p>Used for primary buttons, emphasized panels, header accents, and strong brand moments.</p>
         </article>
 
-        <article class="component-card" style="background:#284a6d; color:#ffffff;">
-            <h3 style="color:#ffffff;">Accent Dark / Background</h3>
-            <p><strong>Darker accent surface</strong></p>
+        <article class="contrast-block" style="background:#284a6d; color:#ffffff;">
+            <span class="label-text">Accent Dark / Background</span>
+            <strong>Darker accent surface</strong>
             <p>Used for stronger contrast, sub-footer treatments, and hover states for primary interactive elements.</p>
         </article>
 
-        <article class="component-card" style="background:#4E008E; color:#ffffff;">
-            <h3 style="color:#ffffff;">Secondary Accent / Background</h3>
-            <p><strong>Bold secondary emphasis</strong></p>
+        <article class="contrast-block" style="background:#4E008E; color:#ffffff;">
+            <span class="label-text">Secondary Accent / Background</span>
+            <strong>Bold secondary emphasis</strong>
             <p>Used for non-blue emphasis in promotional assets, document highlights, callouts, and visual review elements.</p>
         </article>
 
-        <article class="component-card" style="background:#93c54b; color:#3e3f3a;">
-            <h3>Light Accent / Text Primary</h3>
-            <p><strong>Light supporting accent</strong></p>
+        <article class="contrast-block" style="background:#93c54b; color:#3e3f3a;">
+            <span class="label-text">Light Accent / Text Primary</span>
+            <strong>Light supporting accent</strong>
             <p>Used for small highlights, icon accents, checklist marks, and restrained non-blue emphasis.</p>
         </article>
 
-        <article class="component-card" style="background:#dfd7ca; color:#3e3f3a;">
-            <h3>Divider / Text Primary</h3>
-            <p><strong>Low-emphasis separation</strong></p>
+        <article class="contrast-block" style="background:#dfd7ca; color:#3e3f3a;">
+            <span class="label-text">Divider / Text Primary</span>
+            <strong>Low-emphasis separation</strong>
             <p>Used for rules, borders, table lines, quiet separators, and secondary structure.</p>
         </article>
     </div>
 </section>
 
-<section class="section">
+<section class="section section-wide">
     <h2 class="section-title">3. Interaction &amp; Components</h2>
     <p class="note">Core reusable interface and content blocks used by BrianRunk.me and related brand assets.</p>
+
+    <h3 class="subsection-title">Button Contexts</h3>
+
+    <div class="component-demo-stack">
+        <div class="component-demo-panel light">
+            <span class="component-demo-label">Light Surface</span>
+            <div class="button-row">
+                <a class="button" href="#">Primary Action</a>
+                <a class="button button-outline" href="#">Outline</a>
+                <a class="button button-confirmation" href="#">Confirm</a>
+                <a class="button button-alert" href="#">Alert</a>
+            </div>
+        </div>
+
+        <div class="component-demo-panel dark">
+            <span class="component-demo-label">Dark Accent Surface</span>
+            <div class="button-row">
+                <a class="button" href="#">Primary Action</a>
+                <a class="button button-secondary" href="#">Secondary</a>
+                <a class="button button-outline" href="#">Outline</a>
+                <a class="button button-confirmation" href="#">Confirm</a>
+                <a class="button button-alert" href="#">Alert</a>
+            </div>
+        </div>
+
+        <div class="component-demo-panel secondary">
+            <span class="component-demo-label">Secondary Subtle Surface</span>
+            <div class="button-row">
+                <a class="button" href="#">Primary Action</a>
+                <a class="button button-secondary-accent" href="#">Secondary Accent</a>
+                <a class="button button-outline" href="#">Outline</a>
+                <a class="button button-confirmation" href="#">Confirm</a>
+                <a class="button button-alert" href="#">Alert</a>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="subsection-title">Button States</h3>
+
+    <div class="component-demo-panel light">
+        <span class="component-demo-label">States</span>
+        <div class="button-row">
+            <a class="button" href="#">Default</a>
+            <a class="button button-hover-demo" href="#">Hover State</a>
+            <a class="button button-outline" href="#">Outline</a>
+            <a class="button button-confirmation" href="#">Confirm</a>
+            <a class="button button-alert" href="#">Alert</a>
+            <a class="button button-disabled" aria-disabled="true">Disabled</a>
+        </div>
+        <p class="component-demo-note">Use state variations only when they clarify action hierarchy or system feedback.</p>
+    </div>
+
+    <h3 class="subsection-title">Button Sizes</h3>
+
+    <div class="component-demo-panel warm">
+        <span class="component-demo-label">Sizing</span>
+        <div class="button-row">
+            <a class="button button-small" href="#">Small Button</a>
+            <a class="button" href="#">Standard Button</a>
+            <a class="button button-large" href="#">Large CTA</a>
+        </div>
+        <p class="component-demo-note">Use the standard button size for most actions. Reserve larger CTAs for prominent campaign, landing-page, or proposal actions.</p>
+    </div>
 
     <h3 class="subsection-title">Core Components</h3>
 
@@ -866,14 +1228,6 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
             <p>Small uppercase action button using Accent Main, white text, and a 4px radius.</p>
             <div class="button-row">
                 <a class="button" href="#">Request A Quote</a>
-            </div>
-        </article>
-
-        <article class="component-card">
-            <h3>Button Hover State</h3>
-            <p>Primary buttons shift from <code>#325d88</code> to <code>#284a6d</code> on hover.</p>
-            <div class="button-row">
-                <a class="button button-hover-demo" href="#">Request A Quote</a>
             </div>
         </article>
 
@@ -954,29 +1308,8 @@ excerpt: Visual and content style guide for Brian Runk Web Development.
             <li>Tagline font: Helvetica or Arial, regular weight.</li>
             <li>Tagline color: brand blue or charcoal.</li>
         </ul>
-
-        <p><strong>Image-generation prompt:</strong></p>
-
-        <p class="prompt-text">Create a 1200 x 630 px social preview image for Brian Runk Web Development using the attached headshot as the source image. The attached headshot is 1402 x 1122 px, so use it as the high-quality master and crop it into the layout without enlarging it beyond its clean resolution.
-
-Layout:
-- Canvas size: 1200 x 630 px.
-- Background: clean white or warm off-white, similar to #ffffff or #f8f5f0.
-- Keep all important content at least 60 px from the canvas edges.
-- Place the headshot on the left side in a clean crop area about 520 x 520 px, positioned around x=60, y=55.
-- Crop the headshot naturally so the face is centered slightly above the middle, with shoulders visible.
-- Do not alter the likeness, age, facial structure, hair, skin texture, or expression.
-- Place the BrianRunk.me wordmark/logo on the right side, about 430 px wide, positioned around x=650, y=160.
-- Add the tagline below the logo: "Simple, professional websites"
-- Tagline style: Helvetica or Arial, regular weight, around 44 px, color #325d88 or #3e3f3a.
-- Optional supporting line below the tagline: "Clear, modern websites for small businesses."
-- Supporting line style: Helvetica or Arial, regular weight, 28-30 px, color #3e3f3a.
-
-Overall style:
-Professional, calm, natural, local, and trustworthy. The image should feel like a clean small-business website preview, not a corporate ad. Use restrained spacing, simple composition, and the existing BrianRunk.me brand colors. Avoid gradients, tech effects, stock-photo styling, glamour lighting, heavy retouching, or decorative clutter.</p>
     </div>
 </section>
-<INSERT HERE>
 
 	  
         <section class="section">
@@ -986,11 +1319,130 @@ Professional, calm, natural, local, and trustworthy. The image should feel like 
             <h3 class="subsection-title">Icon System Note</h3>
 
             <div class="guideline-box">
-                <p>The current site does not use a formal icon library. The large feature icons currently in use function more like simple spot illustrations than traditional interface icons. They were selected from The Noun Project and manually modified in Adobe Illustrator to create a unified site style.</p>
+                <p>The current site does not use a formal icon library for feature artwork. The large feature icons currently in use function more like simple spot illustrations than traditional interface icons. They were selected from The Noun Project and manually modified in Adobe Illustrator to create a unified site style.</p>
 
                 <p>Future icon use should treat these existing feature icons as the visual reference. Smaller interface icons, navigation icons, button icons, and label-support icons should follow the same general style: simple, practical, service-oriented, mostly black or charcoal linework, minimal fills, rounded stroke endings, restrained detail, and limited use of the light green accent.</p>
+            </div>
 
-                <p>If a reusable icon library is adopted later, it should be chosen because it visually harmonizes with the existing Noun Project-derived feature illustrations. The library should support the current icon direction, not replace it with a different visual language.</p>
+            <h3 class="subsection-title">Library</h3>
+
+            <div class="icon-guide-row">
+                <div class="icon-guide-meta">
+                    <span class="type-label">Library</span>
+                    <h3>Phosphor Icons</h3>
+                    <p>Use Phosphor Icons as the standard icon library for BrianRunk.me interface icons, navigation icons, button icons, and small supporting icons.</p>
+                </div>
+
+                <div class="icon-guide-panel">
+                    <div class="icon-example-row">
+                        <span class="icon-example"><i class="ph ph-arrow-right" aria-hidden="true"></i> Action</span>
+                        <span class="icon-example"><i class="ph ph-envelope-simple" aria-hidden="true"></i> Contact</span>
+                        <span class="icon-example"><i class="ph ph-device-mobile" aria-hidden="true"></i> Mobile</span>
+                        <span class="icon-example"><i class="ph ph-clock" aria-hidden="true"></i> Fast</span>
+                        <span class="icon-example"><i class="ph ph-sparkle" aria-hidden="true"></i> Highlight</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Markup</h3>
+
+            <div class="icon-guide-row">
+                <div class="icon-guide-meta">
+                    <span class="type-label">Markup</span>
+                    <h3>Icon + Label</h3>
+                    <p>Use icons with visible labels by default. The visible text should carry the meaning; the icon should support recognition.</p>
+                </div>
+
+                <div class="icon-guide-panel dark">
+                    <pre class="icon-code-block">&lt;!-- Icon + label --&gt;
+&lt;a class="icon-link" href="/contact"&gt;
+    &lt;i class="ph ph-envelope-simple" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;span&gt;Contact&lt;/span&gt;
+&lt;/a&gt;
+
+&lt;!-- Icon-only control --&gt;
+&lt;button aria-label="Search"&gt;
+    &lt;i class="ph ph-magnifying-glass" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;</pre>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Sizing</h3>
+
+            <div class="icon-guide-row">
+                <div class="icon-guide-meta">
+                    <span class="type-label">Sizing</span>
+                    <h3>Simple Scale</h3>
+                    <p>Keep icon sizes predictable. Icons should feel visually aligned with the text or component they support.</p>
+                </div>
+
+                <div class="icon-guide-panel">
+                    <div class="icon-size-grid">
+                        <div class="icon-size-sample">
+                            <span class="type-label">Body</span>
+                            <p class="icon-example"><i class="ph ph-book-open" style="font-size:16px;" aria-hidden="true"></i> 16px</p>
+                        </div>
+
+                        <div class="icon-size-sample">
+                            <span class="type-label">Buttons</span>
+                            <p class="icon-example"><i class="ph ph-arrow-right" style="font-size:20px;" aria-hidden="true"></i> 20px</p>
+                        </div>
+
+                        <div class="icon-size-sample">
+                            <span class="type-label">Nav / Feature Support</span>
+                            <p class="icon-example"><i class="ph ph-compass" style="font-size:24px;" aria-hidden="true"></i> 24px</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Color</h3>
+
+            <div class="icon-guide-row">
+                <div class="icon-guide-meta">
+                    <span class="type-label">Color</span>
+                    <h3>Inherit By Default</h3>
+                    <p>Icons should usually inherit the surrounding text color. Use accent colors only when the icon is part of an interactive state, status message, or deliberate visual emphasis.</p>
+                </div>
+
+                <div class="icon-guide-panel">
+                    <div class="icon-example-row">
+                        <span class="icon-example"><i class="ph ph-pencil-line" aria-hidden="true"></i> Default inherits text</span>
+                        <span class="icon-example" style="color:#325d88;"><i class="ph ph-star" aria-hidden="true"></i> Accent</span>
+                        <span class="icon-example" style="color:#4E008E;"><i class="ph ph-sparkle" aria-hidden="true"></i> Secondary Accent</span>
+                        <span class="icon-example" style="color:#a33a3a;"><i class="ph ph-warning-circle" aria-hidden="true"></i> Alert</span>
+                        <span class="icon-example" style="color:#006f62;"><i class="ph ph-check-circle" aria-hidden="true"></i> Confirmation</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Component Examples</h3>
+
+            <div class="icon-guide-panel">
+                <div class="button-row">
+                    <a class="button" href="#">
+                        <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                        Request A Quote
+                    </a>
+
+                    <a class="button" href="#">
+                        <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+                        Contact
+                    </a>
+
+                    <a class="button" href="#">
+                        <i class="ph ph-device-mobile" aria-hidden="true"></i>
+                        Mobile Ready
+                    </a>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Accessibility</h3>
+
+            <div class="icon-guide-panel dark">
+                <span class="type-label">Accessibility</span>
+                <h3>Always label icon-only controls</h3>
+                <p>If the icon appears next to visible text, use <code>aria-hidden="true"</code> on the icon. If the icon appears without visible text, provide an accessible label on the control.</p>
             </div>
 
             <h3 class="subsection-title">Feature Icon Direction</h3>
@@ -1015,7 +1467,7 @@ Professional, calm, natural, local, and trustworthy. The image should feel like 
             <div class="guideline-box">
                 <p>The original illustration direction came from <a href="https://icons8.com/illustrations/style--pixeltrue">Icons8 Pixeltrue illustrations</a>. These were used as a broader visual reference for friendly web-service imagery: flat vector scenes, approachable human figures, simplified workspaces, clean shapes, and a limited palette.</p>
 
-                <p>For this project, the illustration direction was modified toward a more unified brand look by reducing the palette, emphasizing black/gray/white structure, and using the site green as an accent. The goal was to make the illustrations feel less like generic stock artwork and more consistent with the site&39;practical, small-business web development tone.</p>
+                <p>For this project, the illustration direction was modified toward a more unified brand look by reducing the palette, emphasizing black/gray/white structure, and using the site green as an accent. The goal was to make the illustrations feel less like generic stock artwork and more consistent with the site&#39;s practical, small-business web development tone.</p>
 
                 <p>This illustration direction is now mostly superseded by photography for the current site, especially for the About page and portfolio/gallery direction. If illustrations are used again, they should stay flat, simple, lightly human, and restrained, with the same black/gray/white base and limited green accent treatment.</p>
             </div>
