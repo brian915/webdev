@@ -58,3 +58,15 @@
     }
   }
 }
+
+.closing-panel {
+  background: _palette(bg-alt);
+  border: 1px solid _palette(border);
+  padding: 30px;
+}
+
+@media (max-width: 767.98px) {
+  .closing-panel {
+    padding: 20px;
+  }
+}

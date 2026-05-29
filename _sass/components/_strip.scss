@@ -54,3 +54,9 @@
 .strip-bg-cover {
   background-size: cover;
 }
+
+.document-header-strip {
+  border-bottom: 1px solid _palette(border);
+  border-top: 4px solid _palette(accent);
+  font-size: 15px;
+}
