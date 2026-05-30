@@ -1,0 +1,61 @@
+
+.color-fg{
+    color:_palette(fg);
+}
+.color-accent{
+    color: _palette(accent);
+}
+.color-accent-dark{
+    color: _palette(accent-dark);
+}
+.color-accent-light {
+  color: _palette(accent-light);
+}
+.color-border{
+    color: _palette(border);
+}
+.color-bg{
+    color: _palette(bg);
+}
+.color-bg-subtle{
+    color: _palette(bg-subtle);
+}
+.color-bg-subtle-atl{
+    color: _palette(bg-subtle-alt);
+}
+.color-alert {
+  color: _palette(alert);
+}
+.color-confirmation {
+  color: _palette(confirmation);
+}
+.background-fg {
+  background-color: _palette(fg);
+}
+.background-accent {
+  background-color: _palette(accent);
+}
+.background-accent-dark {
+  background-color: _palette(accent-dark);
+}
+.background-accent-light {
+  background-color: _palette(accent-light);
+}
+.background-border {
+  background-color: _palette(border);
+}
+.background-bg {
+  background-color: _palette(bg);
+}
+.background-bg-subtle{
+  background-color: _palette(.bg-subtle);
+}
+.background-base-subtle-alt {
+  background-color: _palette(base-subtle-alt);
+}-
+.background-alert{
+  background-color: _palette(alert);
+}
+.background-confirmation{
+  background-color: _palette(confirmation);
+}
