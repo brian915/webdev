@@ -210,6 +210,19 @@
   border: 1px solid _palette(accent-secondary);
 }
 
+
+.styleguide-button {
+    background: _palette(fg);
+    color: _palette(bg);
+    border: 1px solid _palette(fg);
+}
+
+.styleguide-button:hover {
+  background: _palette(accent-dark);
+  color: _palette(accent-secondary);
+  border: 1px solid _palette(accent-secondary);
+}
+
 .styleguide-button-secondary {
   background: _palette(accent-light);
   color: _palette(bg);

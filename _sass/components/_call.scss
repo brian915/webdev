@@ -4,7 +4,7 @@
   background-color: _palette(bg-alt);
   border-radius: 4px;
   // box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-  width: 100%;
+//  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -24,7 +24,7 @@
   .call-box-bottom {
     flex: auto;
     padding: 20px;
-    border-top: 10px solid _palette(border);
+    border-top: 1px solid _palette(border);
     @include media-breakpoint-up(sm) {
       flex: 0 0 auto;
       border: none;
@@ -59,14 +59,3 @@
   }
 }
 
-.closing-panel {
-  background: _palette(bg-alt);
-  border: 1px solid _palette(border);
-  padding: 30px;
-}
-
-@media (max-width: 767.98px) {
-  .closing-panel {
-    padding: 20px;
-  }
-}

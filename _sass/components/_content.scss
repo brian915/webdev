@@ -95,10 +95,6 @@
   }
 }
 
-.content-card {
-  background: _palette(bg);
-}
-
 .document-page {
   background: _palette(bg);
   color: _palette(fg);
@@ -168,21 +164,12 @@
   border-radius: 14px;
 }
 
-
-.surface-warm {
-  background: _palette(bg-alt);
-}
-
 .content-card h3,
 .stat-card h3,
 .checklist-panel h3 {
   font-size: 20px;
   line-height: 1.35;
   margin-bottom: 12px;
-}
-
-.stat-card {
-  background: _palette(bg);
 }
 
 .document-page .stat-value {
@@ -194,13 +181,11 @@
 }
 
 .closing-panel {
-  background: _palette(bg-alt);
   min-height: 100%;
   padding: 30px;
 }
 
 .checklist-panel {
-  background: _palette(bg);
   min-height: 100%;
 }
 

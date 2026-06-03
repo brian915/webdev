@@ -3,11 +3,11 @@
   align-items: center;
   display: inline-flex;
   gap: 0.5rem;
-  font-weight: 700;
   text-decoration: none;
+  color: _palette(accent);
 }
 
 .icon-link:hover {
-  color: _palette(accent-dark);
-  text-decoration: underline;
+  color: _palette(accent-secondary);
+//  text-decoration: underline;
 }
