@@ -24,7 +24,7 @@
   .call-box-bottom {
     flex: auto;
     padding: 20px;
-    border-top: 1px solid _palette(border);
+    border-top: 10px solid _palette(border);
     @include media-breakpoint-up(sm) {
       flex: 0 0 auto;
       border: none;
@@ -39,14 +39,14 @@
   }
   .call-email {
     a {
-      color: _palette(fg-bold);
+      color: _palette(fg);
     }
   }
   strong {
     font-weight: bold;
   }
   svg {
-    fill: lighten(_palette(secondary), 40%);
+    fill: lighten(_palette(accent-secondary), 40%);
     position: absolute;
     bottom: -9px;
     right: 0;

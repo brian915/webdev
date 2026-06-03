@@ -4,3 +4,1555 @@ layout: landing
 permalink: /styleguide.html
 description: Visual and content style guide for Brian Runk Web Development.
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Brian Runk Web Development - Visual Style Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <style>
+        :root {
+            --accent: #325d88;
+            --accent-dark: #284a6d;
+            --secondary: #93c54b;
+	    --secondary-accent: #4E008E;
+	    --base-subtle-2: #E0DDEC;
+            --text: #3e3f3a;
+            --background: #ffffff;
+            --background-alt: #f8f5f0;
+            --border: #dfd7ca;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            font-family: Helvetica, Arial, sans-serif, -apple-system;
+            font-size: 16px;
+            line-height: 1.56;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 1360px;
+            padding: 96px 48px 120px;
+        }
+
+        .content-standard {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1080px;
+        }
+
+        .content-wide {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1240px;
+        }
+
+        .header {
+            border-bottom: 1px solid var(--border);
+            margin: 0 auto 84px;
+            max-width: 1080px;
+            padding-bottom: 42px;
+        }
+
+        .brand-lockup {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 22px;
+        }
+
+        .brand-logo {
+            display: block;
+            height: auto;
+            max-width: 230px;
+            width: 100%;
+        }
+
+        .brand-name {
+            color: var(--text);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: var(--accent);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .supporting-line {
+            color: var(--text);
+            font-size: 17px;
+            max-width: 680px;
+        }
+
+        .section {
+            margin: 0 auto 96px;
+            max-width: 1080px;
+        }
+
+        .section-wide {
+            max-width: 1240px;
+        }
+
+        .section-title {
+            border-left: 4px solid var(--accent);
+            color: var(--text);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(36px, 4vw, 48px);
+            font-weight: 700;
+            line-height: 1.12;
+            margin-bottom: 34px;
+            padding-left: 18px;
+        }
+
+        .subsection-title {
+            color: var(--accent);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 34px 0 18px;
+        }
+
+        .note {
+            color: var(--text);
+            margin-bottom: 24px;
+            max-width: 760px;
+        }
+
+        .color-grid,
+        .sample-grid,
+        .undetermined-grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            margin-top: 28px;
+        }
+
+        .color-swatch,
+        .type-sample,
+        .guideline-box,
+        .component-card,
+        .undetermined-card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .color-swatch {
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(62, 63, 58, 0.14);
+        }
+
+        .color-block {
+            align-items: center;
+            display: flex;
+            height: 128px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .color-block-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .color-block-label.dark {
+            color: var(--text);
+        }
+
+        .color-block-label.light {
+            color: var(--background);
+        }
+
+        .role-table {
+            border-collapse: collapse;
+            margin-top: 34px;
+            width: 100%;
+        }
+
+        .role-table caption {
+            color: var(--text);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .role-table th,
+        .role-table td {
+            border: 1px solid var(--border);
+            padding: 14px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .role-table th {
+            background: var(--base-subtle-2);
+            color: var(--text);
+            font-size: 13px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .role-swatch {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            display: inline-block;
+            height: 34px;
+            margin-right: 12px;
+            vertical-align: middle;
+            width: 56px;
+        }
+
+        .color-info,
+        .type-sample,
+        .guideline-box,
+        .component-card,
+        .undetermined-card {
+            padding: 22px;
+        }
+
+        .color-info {
+            background: var(--background);
+        }
+
+        .contrast-stack {
+            display: grid;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .contrast-block {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 34px;
+        }
+
+        .contrast-block .label-text {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .contrast-block strong {
+            display: block;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 700;
+            line-height: 1.12;
+            margin-bottom: 10px;
+        }
+
+        .contrast-block p {
+            max-width: 720px;
+        }
+
+        .component-context {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            margin-bottom: 30px;
+            padding: 30px;
+        }
+
+        .component-context-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .component-context.dark {
+            background: var(--accent-dark);
+            color: var(--background);
+        }
+
+        .component-context.dark .component-context-label,
+        .component-context.dark p {
+            color: var(--background);
+        }
+
+        .component-context.secondary {
+            background: var(--base-subtle-2);
+        }
+
+        .icon-guide-row {
+            display: grid;
+            gap: 42px;
+            grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+            margin-bottom: 42px;
+        }
+
+        .icon-guide-meta {
+            border-right: 1px solid var(--border);
+            padding-right: 28px;
+        }
+
+        .icon-guide-panel {
+            background: var(--background-alt);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .icon-guide-panel.dark {
+            background: var(--accent-dark);
+            color: var(--background);
+        }
+
+        .icon-guide-panel.dark code,
+        .icon-guide-panel.dark pre,
+        .icon-guide-panel.dark p {
+            color: var(--background);
+        }
+
+        .icon-example-row {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .icon-example {
+            align-items: center;
+            display: inline-flex;
+            gap: 10px;
+        }
+
+        .icon-example i {
+            font-size: 24px;
+        }
+
+        .icon-size-grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .icon-size-sample {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .icon-code-block {
+            font-family: "Courier New", monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .color-name,
+        .component-card h3,
+        .guideline-box h3,
+        .undetermined-card h3 {
+            color: var(--text);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .color-hex,
+        .type-specs,
+        .blank-label {
+            color: var(--accent-dark);
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .color-swatch .color-hex {
+            color: var(--text);
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .type-label {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+
+        .type-hero {
+            color: var(--text);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(42px, 6vw, 50px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .type-section {
+            color: var(--text);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .type-content-heading {
+            color: var(--text);
+            font-family: Helvetica, Arial, sans-serif, -apple-system;
+            font-size: 26px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .type-body {
+            color: var(--text);
+            font-family: Helvetica, Arial, sans-serif, -apple-system;
+            font-size: 16px;
+            line-height: 1.56;
+        }
+        .typeface-row {
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            gap: 56px;
+            grid-template-columns: minmax(220px, 1fr) minmax(0, 2.4fr);
+            margin-bottom: 72px;
+            padding-bottom: 56px;
+        }
+
+        .typeface-row:last-of-type {
+            border-bottom: 0;
+        }
+
+        .typeface-meta {
+            border-right: 1px solid var(--border);
+            padding-right: 28px;
+        }
+
+        .typeface-name {
+            color: var(--text);
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin: 8px 0 12px;
+        }
+
+        .typeface-description {
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        .typeface-specimen {
+            color: var(--text);
+        }
+
+        .typeface-specimen .alphabet-sample {
+            font-size: clamp(52px, 7vw, 76px);
+            font-weight: 700;
+            line-height: 0.88;
+            margin-bottom: 18px;
+        }
+
+        .typeface-specimen .numeral-sample {
+            color: var(--text);
+            font-size: clamp(34px, 4.5vw, 54px);
+            font-weight: 700;
+            line-height: 1;
+            opacity: 0.26;
+        }
+
+        .typeface-specimen.body-font .alphabet-sample {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: clamp(34px, 5vw, 52px);
+            font-weight: 700;
+            line-height: 0.95;
+        }
+
+        .typeface-specimen.body-font .numeral-sample {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: clamp(24px, 3.5vw, 38px);
+        }
+
+        .type-hierarchy-block {
+            margin-bottom: 56px;
+        }
+
+        .type-hierarchy-example {
+            margin-bottom: 42px;
+        }
+
+        .type-hierarchy-example:last-child {
+            margin-bottom: 0;
+        }
+
+        .type-hierarchy-label {
+            color: var(--accent);
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .type-hierarchy-h1 {
+            color: var(--text);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(42px, 6vw, 64px);
+            font-weight: 700;
+            line-height: 1.05;
+        }
+
+        .type-hierarchy-h2 {
+            color: var(--accent);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(30px, 4vw, 42px);
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .type-hierarchy-grid {
+            display: grid;
+            gap: 42px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @media (max-width: 760px) {
+            .typeface-row,
+            .type-hierarchy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .typeface-meta {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 24px;
+                padding-right: 0;
+            }
+
+            .icon-guide-row,
+            .icon-size-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .icon-guide-meta {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 24px;
+                padding-right: 0;
+            }
+        }
+        .button-row {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .button {
+            background: var(--accent);
+            border-radius: 4px;
+            color: var(--background);
+            display: inline-block;
+            font-size: 14px;
+            height: 40px;
+            letter-spacing: 0.025em;
+            line-height: 40px;
+            padding: 0 14px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .button:hover {
+            background: var(--accent-dark);
+            color: var(--background);
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+	.button-hover-demo {
+	    background: var(--accent-dark);
+	}
+
+        .button-secondary {
+            background: var(--secondary);
+            color: var(--text);
+        }
+
+        .button-secondary:hover {
+            background: var(--secondary);
+            color: var(--text);
+            transform: translateY(-1px);
+        }
+
+        .button-secondary-accent {
+            background: var(--secondary-accent);
+            color: var(--background);
+        }
+
+        .button-secondary-accent:hover {
+            background: var(--secondary-accent);
+            color: var(--background);
+            transform: translateY(-1px);
+        }
+
+        .button-outline {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .button-outline:hover {
+            background: var(--background-alt);
+            color: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .button-alert {
+            background: #a33a3a;
+            color: var(--background);
+        }
+
+        .button-alert:hover {
+            background: #a33a3a;
+            color: var(--background);
+            transform: translateY(-1px);
+        }
+
+        .button-confirmation {
+            background: #006f62;
+            color: var(--background);
+        }
+
+        .button-confirmation:hover {
+            background: #006f62;
+            color: var(--background);
+            transform: translateY(-1px);
+        }
+
+        .button-disabled,
+        .button-disabled:hover {
+            background: var(--border);
+            color: var(--text);
+            cursor: not-allowed;
+            opacity: 0.65;
+            transform: none;
+        }
+
+        .button-small {
+            font-size: 12px;
+            height: 34px;
+            line-height: 34px;
+            padding: 0 12px;
+        }
+
+        .button-large {
+            font-size: 16px;
+            height: 48px;
+            line-height: 48px;
+            padding: 0 22px;
+        }
+
+        .component-demo-stack {
+            display: grid;
+            gap: 30px;
+            margin-top: 28px;
+        }
+
+        .component-demo-panel {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .component-demo-panel.light {
+            background: var(--background);
+        }
+
+        .component-demo-panel.warm {
+            background: var(--background-alt);
+        }
+
+        .component-demo-panel.secondary {
+            background: var(--base-subtle-2);
+        }
+
+        .component-demo-panel.dark {
+            background: var(--accent-dark);
+            color: var(--background);
+        }
+
+        .component-demo-panel.dark .component-demo-label,
+        .component-demo-panel.dark p {
+            color: var(--background);
+        }
+
+        .component-demo-panel.dark .button-outline {
+            border-color: var(--background);
+            color: var(--background);
+        }
+
+        .component-demo-panel.dark .button-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--background);
+        }
+
+        .component-demo-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .component-demo-note {
+            margin-top: 18px;
+            max-width: 760px;
+        }
+
+        .surface-alt {
+            background: var(--background-alt);
+        }
+
+        .surface-accent {
+            background: var(--accent);
+            color: var(--background);
+        }
+
+        .surface-accent h3,
+        .surface-accent p {
+            color: var(--background);
+        }
+
+        .call-box {
+            background: var(--background-alt);
+            border-radius: 4px;
+            padding: 22px;
+        }
+
+        .feature-card {
+            align-items: center;
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            min-height: 180px;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .feature-card img {
+            display: block;
+            height: 64px;
+            margin-bottom: 16px;
+            width: 64px;
+        }
+
+        .blank {
+            border-bottom: 1px solid var(--border);
+            display: block;
+            min-height: 28px;
+            width: 100%;
+        }
+
+        .prompt-text {
+            background: var(--background-alt);
+            border-left: 3px solid var(--secondary);
+            margin-top: 14px;
+            padding: 18px;
+            white-space: pre-line;
+        }
+
+        ul {
+            margin-left: 22px;
+            margin-top: 12px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 42px 20px;
+            }
+
+            .brand-lockup {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .button {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="brand-lockup">
+                <img class="brand-logo" src="{{ '/assets/images/logo/logo.svg' | relative_url }}" alt="Brian Runk Web Development logo">
+                <div>
+                    <div class="brand-name">Brian Runk</div>
+                    <div class="tagline">Simple, professional websites</div>
+                    <div class="supporting-line">Clear, modern, easy to use websites for small businesses.</div>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="section">
+            <h2 class="section-title">Brand Basics</h2>
+            <div class="sample-grid">
+                <article class="component-card">
+                    <h3>Site Name</h3>
+                    <p>Brian Runk - Web Development</p>
+                </article>
+                <article class="component-card">
+                    <h3>Domain</h3>
+                    <p>https://brianrunk.me</p>
+                </article>
+                <article class="component-card">
+                    <h3>Core Offer</h3>
+                    <p>Simple, professional websites for small businesses.</p>
+                </article>
+                <article class="component-card">
+                    <h3>Primary Message</h3>
+                    <p>Help your customers understand, trust and connect with your business.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-wide">
+            <h2 class="section-title">1. Color Roles &amp; Palette</h2>
+            <p class="note">Core color roles for Brian Runk Web Development, using the active site palette and the branding-guide role structure.</p>
+
+            <div class="color-grid">
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#3e3f3a;">
+                        <span class="color-block-label light">TEXT PRIMARY</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#3e3f3a</div>
+                    </div>
+                </article>
+
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#325d88;">
+                        <span class="color-block-label light">ACCENT MAIN</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#325d88</div>
+                    </div>
+                </article>
+
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#284a6d;">
+                        <span class="color-block-label light">ACCENT DARK</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#284a6d</div>
+                    </div>
+                </article>
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#93c54b;">
+                        <span class="color-block-label dark">LIGHT ACCENT</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#93c54b</div>
+                    </div>
+                </article>
+		<article class="color-swatch">
+		  <div class="color-block" style="background:#4E008E;">
+		    <span class="color-block-label light">SECONDARY ACCENT</span>
+		  </div>
+		  <div class="color-info">
+		    <div class="color-hex">#4E008E</div>
+		  </div>
+		</article>
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#a33a3a;">
+                        <span class="color-block-label light">ALERT</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#a33a3a</div>
+                    </div>
+                </article>
+
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#006f62;">
+                        <span class="color-block-label light">CONFIRMATION</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#006f62</div>
+                    </div>
+                </article>
+
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#dfd7ca;">
+                        <span class="color-block-label light">DIVIDER / SECONDARY TEXT</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#dfd7ca</div>
+                    </div>
+                </article>
+
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#ffffff;">
+                        <span class="color-block-label dark">BACKGROUND</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#ffffff</div>
+                    </div>
+                </article>
+
+                <article class="color-swatch">
+                    <div class="color-block" style="background:#f8f5f0;">
+                        <span class="color-block-label dark">SUBTLE BASE 1</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-hex">#f8f5f0</div>
+                    </div>
+                </article>
+		<article class="color-swatch">
+		  <div class="color-block" style="background:#E0DDEC;">
+		    <span class="color-block-label dark">SUBTLE BASE 2</span>
+		  </div>
+		  <div class="color-info">
+		    <div class="color-hex">#E0DDEC</div>
+		  </div>
+		</article>
+            </div>
+
+            <table class="role-table">
+                <caption>Functional Usage Guide</caption>
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Color</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Text Primary</td>
+                        <td><span class="role-swatch" style="background:#3e3f3a;"></span><code>#3e3f3a</code></td>
+                        <td>Main body text, headings, strong foreground text, and dark neutral containers when needed.</td>
+                    </tr>
+                    <tr>
+                        <td>Accent Main</td>
+                        <td><span class="role-swatch" style="background:#325d88;"></span><code>#325d88</code></td>
+                        <td>Primary buttons, links, emphasis text, header stripe, and main brand accent.</td>
+                    </tr>
+                    <tr>
+                        <td>Accent Dark</td>
+                        <td><span class="role-swatch" style="background:#284a6d;"></span><code>#284a6d</code></td>
+                        <td>Darker accent variant for stronger contrast, dark accent surfaces, or supporting treatments as well as  hover states for primary buttons or interactive accent elements.</td>
+                    </tr>
+                    <tr>
+                        <td>Light Accent</td>
+                        <td><span class="role-swatch" style="background:#93c54b;"></span><code>#93c54b</code></td>
+                        <td>Small highlights, icon accents, light chart elements, and restrained supporting emphasis.</td>
+                    </tr>
+                    <tr>
+                        <td>Alert</td>
+                        <td><span class="role-swatch" style="background:#a33a3a;"></span><code>#a33a3a</code></td>
+                        <td>Warnings, errors, destructive action labels, and urgent notes.</td>
+                    </tr>
+                    <tr>
+                        <td>Confirmation</td>
+                        <td><span class="role-swatch" style="background:#006f62;"></span><code>#006f62</code></td>
+                        <td>Confirmation messages, affirmative action buttons, and positive UI states.</td>
+                    </tr>
+                    <tr>
+                        <td>Divider / Secondary Text</td>
+                        <td><span class="role-swatch" style="background:#dfd7ca;"></span><code>#dfd7ca</code></td>
+                        <td>Subtle dividing lines, metadata, helper text, captions, lower-priority copy, and disabled states when needed.</td>
+                    </tr>
+                    <tr>
+                        <td>Background</td>
+                        <td><span class="role-swatch" style="background:#ffffff;"></span><code>#ffffff</code></td>
+                        <td>Main page background and clean document surfaces.</td>
+                    </tr>
+                    <tr>
+                        <td>Subtle Base 1</td>
+                        <td><span class="role-swatch" style="background:#f8f5f0;"></span><code>#f8f5f0</code></td>
+                        <td>Panel backgrounds, soft content bands, call boxes, and quiet layout variation.</td>
+                    </tr>
+		    <tr>
+		      <td>Subtle Base 2</td>
+		      <td><span class="role-swatch" style="background:#E0DDEC;"></span><code>#E0DDEC</code></td>
+		      <td>Soft secondary surface adds variety to layouts, table headers, secondary cards, subtle gradient starts, and promotional assets.</td>
+		    </tr>
+                </tbody>
+            </table>
+        </section>
+
+	<section class="section">
+    <h2 class="section-title">2. Typography &amp; Hierarchy</h2>
+    <p class="note">A consistent system balancing editorial warmth with practical clarity.</p>
+
+    <div class="typeface-row">
+        <div class="typeface-meta">
+            <span class="type-label">Typeface 01</span>
+            <h3 class="typeface-name" style="font-family:'Playfair Display', Georgia, serif;">Playfair Display</h3>
+            <p class="typeface-description">Reserved for high-level headings, hero text, section titles, and brand-forward editorial moments.</p>
+        </div>
+
+        <div class="typeface-specimen" style="font-family:'Playfair Display', Georgia, serif;">
+            <p class="alphabet-sample">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
+            <p class="numeral-sample">1234567890 ! @ # $ % &amp; * ( )</p>
+        </div>
+    </div>
+
+    <div class="type-hierarchy-block">
+        <div class="type-hierarchy-example">
+            <span class="type-hierarchy-label">Headline 1 — Playfair Display Bold</span>
+            <h1 class="type-hierarchy-h1">Simple, professional websites</h1>
+        </div>
+
+        <div class="type-hierarchy-example">
+            <span class="type-hierarchy-label">Headline 2 — Playfair Display Bold</span>
+            <h2 class="type-hierarchy-h2">Help customers connect</h2>
+        </div>
+    </div>
+
+    <div class="typeface-row">
+        <div class="typeface-meta">
+            <span class="type-label">Typeface 02</span>
+            <h3 class="typeface-name" style="font-family:Helvetica, Arial, sans-serif;">Helvetica / Arial</h3>
+            <p class="typeface-description">Used for body copy, UI text, buttons, forms, proposals, PDF documents, and practical support copy.</p>
+        </div>
+
+        <div class="typeface-specimen body-font">
+            <p class="alphabet-sample">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
+            <p class="numeral-sample">1234567890 ! @ # $ % &amp; * ( )</p>
+        </div>
+    </div>
+
+    <div class="type-hierarchy-grid">
+        <div class="type-hierarchy-example">
+            <span class="type-hierarchy-label">Content Heading — Helvetica / Arial Regular</span>
+            <h3 class="type-content-heading">Straight Forward Process</h3>
+        </div>
+
+        <div class="type-hierarchy-example">
+            <span class="type-hierarchy-label">Body Text — Helvetica / Arial Regular</span>
+            <p class="type-body">I build professional small-business websites presenting services, hours of operation and contact information.</p>
+        </div>
+    </div>
+
+    <h3 class="subsection-title">Print / PDF Document Treatment</h3>
+
+    <div class="guideline-box">
+        <p>Print and PDF documents should look clean, professional, and consistent with the Brian Runk Web Development website. Use the same core brand elements: the BrianRunk.me logo, Playfair Display for major headings when practical, Helvetica or Arial for body copy, the blue accent color, restrained green accents, charcoal text, white or warm off-white backgrounds, and simple dividing rules.</p>
+
+        <p>Layouts should stay practical and easy to scan. Avoid decorative complexity, heavy graphic treatments, dense color blocks, or overly designed proposal templates. Each document type should follow normal expectations for that format: proposals should have clear sections and pricing, invoices or estimates should prioritize readable line items and totals, and one-page handouts should be concise with strong hierarchy and contact information.</p>
+
+        <ul>
+            <li>Page size: US Letter, 8.5 x 11 in.</li>
+            <li>Margins: 0.6 to 0.75 in.</li>
+            <li>Header: logo top-left, optional document title top-right.</li>
+            <li>Footer: contact info, website, and page number for multi-page documents.</li>
+            <li>Heading font: Playfair Display when available, Georgia as fallback.</li>
+            <li>Body font: Helvetica or Arial.</li>
+            <li>Body size: 10.5 to 11.5 pt.</li>
+            <li>Heading color: charcoal or brand blue.</li>
+            <li>Tables: simple borders using the divider color, with no heavy fills.</li>
+            <li>Accent color: use green only for small highlights, not large blocks.</li>
+        </ul>
+
+        <p>The overall impression should be calm, organized, trustworthy, and aligned with the website rather than a separate print campaign.</p>
+    </div>
+</section>
+
+
+<section class="section section-wide">
+    <h2 class="section-title">2.2 Contrast Combinations &amp; Legibility</h2>
+    <p class="note">Approved color pairings to review for readability, hierarchy, and visual balance across website, document, survey, and promotional uses.</p>
+
+    <div class="contrast-stack">
+        <article class="contrast-block" style="background:#ffffff; color:#3e3f3a;">
+            <span class="label-text">Background / Text Primary</span>
+            <strong>Main content on white</strong>
+            <p>Used for primary page content, body copy, headings, and clean document surfaces.</p>
+        </article>
+
+        <article class="contrast-block" style="background:#f8f5f0; color:#3e3f3a;">
+            <span class="label-text">Subtle Base 1 / Text Primary</span>
+            <strong>Warm surface with dark text</strong>
+            <p>Used for soft content bands, call boxes, quiet panels, and page variation.</p>
+        </article>
+
+        <article class="contrast-block" style="background:#E0DDEC; color:#3e3f3a;">
+            <span class="label-text">Subtle Base 2 / Text Primary</span>
+            <strong>Soft secondary surface with dark text</strong>
+            <p>Used to break up blue-heavy layouts, secondary cards, table headers, and promotional assets.</p>
+        </article>
+
+        <article class="contrast-block" style="background:#325d88; color:#ffffff;">
+            <span class="label-text">Accent Main / Background</span>
+            <strong>Primary accent surface</strong>
+            <p>Used for primary buttons, emphasized panels, header accents, and strong brand moments.</p>
+        </article>
+
+        <article class="contrast-block" style="background:#284a6d; color:#ffffff;">
+            <span class="label-text">Accent Dark / Background</span>
+            <strong>Darker accent surface</strong>
+            <p>Used for stronger contrast, sub-footer treatments, and hover states for primary interactive elements.</p>
+        </article>
+
+        <article class="contrast-block" style="background:#4E008E; color:#ffffff;">
+            <span class="label-text">Secondary Accent / Background</span>
+            <strong>Bold secondary emphasis</strong>
+            <p>Used for non-blue emphasis in promotional assets, document highlights, callouts, and visual review elements.</p>
+        </article>
+
+        <article class="contrast-block" style="background:#93c54b; color:#3e3f3a;">
+            <span class="label-text">Light Accent / Text Primary</span>
+            <strong>Light supporting accent</strong>
+            <p>Used for small highlights, icon accents, checklist marks, and restrained non-blue emphasis.</p>
+        </article>
+
+        <article class="contrast-block" style="background:#dfd7ca; color:#3e3f3a;">
+            <span class="label-text">Divider / Text Primary</span>
+            <strong>Low-emphasis separation</strong>
+            <p>Used for rules, borders, table lines, quiet separators, and secondary structure.</p>
+        </article>
+    </div>
+</section>
+
+<section class="section section-wide">
+    <h2 class="section-title">3. Interaction &amp; Components</h2>
+    <p class="note">Core reusable interface and content blocks used by BrianRunk.me and related brand assets.</p>
+
+    <h3 class="subsection-title">Button Contexts</h3>
+
+    <div class="component-demo-stack">
+        <div class="component-demo-panel light">
+            <span class="component-demo-label">Light Surface</span>
+            <div class="button-row">
+                <a class="button" href="#">Primary Action</a>
+                <a class="button button-outline" href="#">Outline</a>
+                <a class="button button-confirmation" href="#">Confirm</a>
+                <a class="button button-alert" href="#">Alert</a>
+            </div>
+        </div>
+
+        <div class="component-demo-panel dark">
+            <span class="component-demo-label">Dark Accent Surface</span>
+            <div class="button-row">
+                <a class="button" href="#">Primary Action</a>
+                <a class="button button-secondary" href="#">Secondary</a>
+                <a class="button button-outline" href="#">Outline</a>
+                <a class="button button-confirmation" href="#">Confirm</a>
+                <a class="button button-alert" href="#">Alert</a>
+            </div>
+        </div>
+
+        <div class="component-demo-panel secondary">
+            <span class="component-demo-label">Secondary Subtle Surface</span>
+            <div class="button-row">
+                <a class="button" href="#">Primary Action</a>
+                <a class="button button-secondary-accent" href="#">Secondary Accent</a>
+                <a class="button button-outline" href="#">Outline</a>
+                <a class="button button-confirmation" href="#">Confirm</a>
+                <a class="button button-alert" href="#">Alert</a>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="subsection-title">Button States</h3>
+
+    <div class="component-demo-panel light">
+        <span class="component-demo-label">States</span>
+        <div class="button-row">
+            <a class="button" href="#">Default</a>
+            <a class="button button-hover-demo" href="#">Hover State</a>
+            <a class="button button-outline" href="#">Outline</a>
+            <a class="button button-confirmation" href="#">Confirm</a>
+            <a class="button button-alert" href="#">Alert</a>
+            <a class="button button-disabled" aria-disabled="true">Disabled</a>
+        </div>
+        <p class="component-demo-note">Let icons inherit the text color of their container unless they are part of an interactive state or system status.</p>
+    </div>
+
+    <h3 class="subsection-title">Button Sizes</h3>
+
+    <div class="component-demo-panel warm">
+        <span class="component-demo-label">Sizing</span>
+        <div class="button-row">
+            <a class="button button-small" href="#">Small Button</a>
+            <a class="button" href="#">Standard Button</a>
+            <a class="button button-large" href="#">Large CTA</a>
+        </div>
+        <p class="component-demo-note">Use the standard button size for most actions. Reserve larger CTAs for prominent campaign, landing-page, or proposal actions.</p>
+    </div>
+
+    <h3 class="subsection-title">Core Components</h3>
+
+    <div class="sample-grid">
+        <article class="component-card">
+            <h3>Primary Button</h3>
+            <p>Small uppercase action button using Accent Main, white text, and a 4px radius.</p>
+            <div class="button-row">
+                <a class="button" href="#">Request A Quote</a>
+            </div>
+        </article>
+
+        <article class="component-card">
+            <h3>Button With Icon</h3>
+            <p>Use Phosphor icons when a small icon helps clarify the action.</p>
+            <div class="button-row">
+                <a class="button" href="#">
+                    <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                    Request A Quote
+                </a>
+            </div>
+        </article>
+
+        <article class="component-card">
+            <h3>Call Box</h3>
+            <div class="call-box">
+                <p><strong>Request A Quote</strong></p>
+                <p>Email: brian@brianrunk.net</p>
+            </div>
+        </article>
+
+        <article class="component-card">
+            <h3>Feature Card</h3>
+            <div class="feature-card">
+                <img src="{{ '/assets/images/features/time_flies.svg' | relative_url }}" alt="">
+                <p><strong>Fast Service</strong></p>
+            </div>
+        </article>
+
+        <article class="component-card surface-accent">
+            <h3>Accent Surface</h3>
+            <p>Used for footer, full-screen mobile menu treatments, and strong accent sections.</p>
+        </article>
+
+        <article class="component-card surface-alt">
+            <h3>Subtle Surface</h3>
+            <p>Used for warm contrast bands, call boxes, and promotion strips.</p>
+        </article>
+
+        <article class="component-card" style="background:#E0DDEC;">
+            <h3>Secondary Subtle Surface</h3>
+            <p>Used for secondary cards, table headers, and visual variation in documents or promotional assets.</p>
+        </article>
+
+        <article class="component-card" style="border-top:4px solid #4E008E;">
+            <h3>Secondary Accent Callout</h3>
+            <p>Used when a section needs stronger non-blue emphasis without changing the primary brand direction.</p>
+        </article>
+    </div>
+
+    <h3 class="subsection-title">Icon Use In Components</h3>
+
+    <div class="guideline-box">
+        <p>Use Phosphor icons for interface icons, navigation icons, button icons, and small supporting icons. Icons should clarify meaning, support labels, or reinforce navigation.</p>
+
+        <ul>
+            <li>Use icons with visible text labels by default.</li>
+            <li>Let icons inherit the surrounding text color unless a deliberate accent or status treatment is needed.</li>
+            <li>Use <code>aria-hidden="true"</code> when the visible label already provides the meaning.</li>
+            <li>Use an accessible label when an icon appears without visible text.</li>
+        </ul>
+    </div>
+
+    <h3 class="subsection-title">Share / Social Preview Image</h3>
+
+    <div class="guideline-box">
+        <p>Use <code>assets/images/social/social_preview.png</code> as the primary share and social preview image for Brian Runk Web Development.</p>
+
+        <p>The social preview image should be 1200 x 630 px and exported as a PNG. It should use the professional headshot, the BrianRunk.me wordmark/logo, and the tagline in a clean layout with generous safe margins. The image should feel calm, practical, trustworthy, and consistent with the website.</p>
+
+        <ul>
+            <li>Canvas size: 1200 x 630 px.</li>
+            <li>Format: PNG.</li>
+            <li>Content: professional headshot, BrianRunk.me wordmark/logo, and tagline.</li>
+            <li>Safe margin: keep important content at least 60 px from the canvas edges.</li>
+            <li>Background: white or warm off-white.</li>
+            <li>Tagline font: Helvetica or Arial, regular weight.</li>
+            <li>Tagline color: brand blue or charcoal.</li>
+        </ul>
+    </div>
+</section>
+
+	  
+        <section class="section">
+            <h2 class="section-title">4. Icon Use</h2>
+            <p class="note">Icons should clarify meaning at a glance. Use them to reinforce labels and navigation, not as decoration. The current feature icons function more like simple spot illustrations, but future traditional icons should follow the same visual language.</p>
+
+            <h3 class="subsection-title">Icon System Note</h3>
+
+            <div class="guideline-box">
+                <p>The current site does not use a formal icon library for feature artwork. The large feature icons currently in use function more like simple spot illustrations than traditional interface icons. They were selected from The Noun Project and manually modified in Adobe Illustrator to create a unified site style.</p>
+
+                <p>Future icon use should treat these existing feature icons as the visual reference. Smaller interface icons, navigation icons, button icons, and label-support icons should follow the same general style: simple, practical, service-oriented, mostly black or charcoal linework, minimal fills, rounded stroke endings, restrained detail, and limited use of the light green accent.</p>
+            </div>
+
+            <h3 class="subsection-title">Library</h3>
+
+            <div class="icon-guide-row">
+                <div class="icon-guide-meta">
+                    <span class="type-label">Library</span>
+                    <h3>Phosphor Icons</h3>
+                    <p>Use Phosphor Icons as the standard icon library. Keep iconography consistent by using a single library across the site.</p>
+                </div>
+
+                <div class="icon-guide-panel">
+                    <div class="icon-example-row">
+                        <span class="icon-example"><i class="ph ph-arrow-right" aria-hidden="true"></i> Action</span>
+                        <span class="icon-example"><i class="ph ph-envelope-simple" aria-hidden="true"></i> Contact</span>
+                        <span class="icon-example"><i class="ph ph-device-mobile" aria-hidden="true"></i> Mobile</span>
+                        <span class="icon-example"><i class="ph ph-clock" aria-hidden="true"></i> Fast</span>
+                        <span class="icon-example"><i class="ph ph-sparkle" aria-hidden="true"></i> Highlight</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Markup</h3>
+
+            <div class="icon-guide-row">
+                <div class="icon-guide-meta">
+                    <span class="type-label">Markup</span>
+                    <h3>Icon + Label</h3>
+                    <p>Use icons with visible labels by default. Icons should reinforce labels and navigation, not replace meaning.</p>
+                </div>
+
+                <div class="icon-guide-panel dark">
+                    <pre class="icon-code-block">&lt;!-- Icon + label --&gt;
+&lt;a class="icon-link" href="/contact"&gt;
+    &lt;i class="ph ph-envelope-simple" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;span&gt;Contact&lt;/span&gt;
+&lt;/a&gt;
+
+&lt;!-- Icon-only control --&gt;
+&lt;button aria-label="Search"&gt;
+    &lt;i class="ph ph-magnifying-glass" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;</pre>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Sizing</h3>
+
+            <div class="icon-guide-row">
+                <div class="icon-guide-meta">
+                    <span class="type-label">Sizing</span>
+                    <h3>Simple Scale</h3>
+		    <p>Keep sizes predictable. Icons should match the text they sit beside.</p>
+                </div>
+
+                <div class="icon-guide-panel">
+                    <div class="icon-size-grid">
+                        <div class="icon-size-sample">
+                            <span class="type-label">Body</span>
+                            <p class="icon-example"><i class="ph ph-book-open" style="font-size:16px;" aria-hidden="true"></i> 16px</p>
+                        </div>
+
+                        <div class="icon-size-sample">
+                            <span class="type-label">Buttons</span>
+                            <p class="icon-example"><i class="ph ph-arrow-right" style="font-size:20px;" aria-hidden="true"></i> 20px</p>
+                        </div>
+
+                        <div class="icon-size-sample">
+                            <span class="type-label">Nav / Feature Support</span>
+                            <p class="icon-example"><i class="ph ph-compass" style="font-size:24px;" aria-hidden="true"></i> 24px</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Color</h3>
+
+            <div class="icon-guide-row">
+                <div class="icon-guide-meta">
+                    <span class="type-label">Color</span>
+                    <h3>Inherit By Default</h3>
+                    <p>Let icons inherit the text color of their container unless they are part of an interactive state or system status.</p>
+                </div>
+
+                <div class="icon-guide-panel">
+                    <div class="icon-example-row">
+                        <span class="icon-example"><i class="ph ph-pencil-line" aria-hidden="true"></i> Default inherits text</span>
+                        <span class="icon-example" style="color:#325d88;"><i class="ph ph-star" aria-hidden="true"></i> Accent</span>
+                        <span class="icon-example" style="color:#4E008E;"><i class="ph ph-sparkle" aria-hidden="true"></i> Secondary Accent</span>
+                        <span class="icon-example" style="color:#a33a3a;"><i class="ph ph-warning-circle" aria-hidden="true"></i> Alert</span>
+                        <span class="icon-example" style="color:#006f62;"><i class="ph ph-check-circle" aria-hidden="true"></i> Confirmation</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Component Examples</h3>
+
+            <div class="icon-guide-panel">
+                <div class="button-row">
+                    <a class="button" href="#">
+                        <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                        Request A Quote
+                    </a>
+
+                    <a class="button" href="#">
+                        <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+                        Contact
+                    </a>
+
+                    <a class="button" href="#">
+                        <i class="ph ph-device-mobile" aria-hidden="true"></i>
+                        Mobile Ready
+                    </a>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Accessibility</h3>
+
+            <div class="icon-guide-panel dark">
+                <span class="type-label">Accessibility</span>
+                <h3>Always label icon-only controls</h3>
+                <p>If the icon appears next to visible text, use <code>aria-hidden="true"</code> on the icon. If the icon appears without visible text, provide an accessible label on the control.</p>
+            </div>
+
+            <h3 class="subsection-title">Feature Icon Direction</h3>
+
+            <div class="guideline-box">
+                <p>The current feature icons are sourced from The Noun Project and manually modified in Adobe Illustrator to create a unified site style. The source concepts are finger snapping, cell phone, and fast/speed.</p>
+
+                <ul>
+                    <li>Finger snapping: <a href="https://thenounproject.com/icon/finger-snapping-4987623/">The Noun Project source</a></li>
+                    <li>Cell phone: <a href="https://thenounproject.com/icon/cell-phone-167463/">The Noun Project source</a></li>
+                    <li>Fast/speed: <a href="https://thenounproject.com/icon/fast-7335232/">The Noun Project source</a></li>
+                    <li>Fast/speed: <a href="https://thenounproject.com/icon/fast-5933095/">The Noun Project source</a></li>
+                </ul>
+
+                <p>The finished icon style is simple, practical, and service-oriented. Icons use clean black or charcoal linework, minimal fills, rounded stroke endings, and a restrained amount of detail. Each icon is adapted to feel like part of the same set by normalizing stroke weight, simplifying unnecessary detail, aligning proportions, and applying the site accent green only as a small highlight rather than a dominant color.</p>
+
+                <p>To replicate the style, start with a simple outline icon, reduce it to its clearest readable form, keep the primary drawing black/charcoal, use white or transparent negative space, and add green only where it supports the idea or creates visual emphasis. Avoid full-color icons, heavy fills, complex gradients, mismatched stroke weights, or overly decorative illustration detail.</p>
+            </div>
+
+            <h3 class="subsection-title">Illustration Direction</h3>
+
+            <div class="guideline-box">
+                <p>The original illustration direction came from <a href="https://icons8.com/illustrations/style--pixeltrue">Icons8 Pixeltrue illustrations</a>. These were used as a broader visual reference for friendly web-service imagery: flat vector scenes, approachable human figures, simplified workspaces, clean shapes, and a limited palette.</p>
+
+                <p>For this project, the illustration direction was modified toward a more unified brand look by reducing the palette, emphasizing black/gray/white structure, and using the site green as an accent. The goal was to make the illustrations feel less like generic stock artwork and more consistent with the site&#39;s practical, small-business web development tone.</p>
+
+                <p>This illustration direction is now mostly superseded by photography for the current site, especially for the About page and portfolio/gallery direction. If illustrations are used again, they should stay flat, simple, lightly human, and restrained, with the same black/gray/white base and limited green accent treatment.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">5. Photography &amp; Image Direction</h2>
+
+            <h3 class="subsection-title">5.1 Photography Direction</h3>
+
+            <div class="guideline-box">
+                <p>Photography should feel professional, natural, grounded, and credible for a local independent web developer serving small businesses. Images should look like real photographs from a good local photographer, not a corporate stock campaign or futuristic technology brand.</p>
+
+                <p>Use naturalistic light, believable human expression, clean but lived-in working environments, and restrained colors that harmonize with the blue, green, charcoal, white, and warm off-white palette. Website/gallery images, About imagery, workspace images, and future brand photos should support trust, clarity, and practical competence.</p>
+
+                <p>Avoid corporate stock-photo polish, futuristic tech styling, glamour lighting, dramatic executive portrait lighting, exaggerated retouching, AI-generated portrait artifacts, neon effects, busy office scenes, generic handshake photography, and overly idealized or artificial people.</p>
+            </div>
+
+            <h3 class="subsection-title">5.2 Headshot Prompt</h3>
+
+            <div class="guideline-box">
+                <p class="prompt-text">Use the uploaded photos as the only visual references for my likeness.
+
+Create a professional but natural headshot of me as an independent web developer for small businesses. Preserve my real facial structure, age, hairline, hair shape, eye shape, brow, nose, jawline, light stubble, skin tone, and natural facial asymmetry from the reference photos.
+
+The image should look like me on a good day: believable, competent, approachable, and grounded. Prioritize real-person credibility over generic attractiveness, stock-photo polish, or idealization. Do not make me look younger, heavier, smoother, more symmetrical, more conventionally handsome, or like an AI-improved version of myself. Keep me attractive in the way I actually look, not in a generic AI headshot way.
+
+Expression: calm, direct, relaxed, and approachable. Use a slight natural smile with subtle smile lines around the eyes. The expression should feel warm and practical, not stern, not artificially cheerful, not locked-in, and not like a corporate stock photo.
+
+Hair: match the reference photos closely. Natural salt-and-pepper hair, not overly silver, casually swept upward and back with realistic weight and unevenness. Avoid spiky hair, gelled hair, separated hair clumps, sculpted portrait hair, or overly styled volume.
+
+Skin and facial detail: keep natural skin texture, mild redness, faint lines, pores, slight under-eye detail, and realistic light stubble. Avoid waxy skin, plastic skin, airbrushing, exaggerated retouching, hyper-detailed pores, uniform speckled stubble, or an overly crisp generated portrait finish.
+
+Lighting: use professional but casual lighting, like a good local photographer took the photo. Soft natural key light from the front-left, gentle fill light, clean catchlights in the eyes, realistic shadows, and a slightly warm welcoming tone. The lighting should be polished enough for a professional website, but not glossy, theatrical, corporate, or obviously studio-generated.
+
+Composition: close professional headshot, shoulders and upper chest visible, direct eye contact, shallow depth of field. Use simple casual-professional clothing. Clean neutral background with subtle blue and warm off-white tones.
+
+Overall feel: a real, trustworthy local small-business website photo. Independent, experienced, approachable, practical, and competent. It should look like a real photograph taken with a camera, not a generated portrait.
+
+Do not use futuristic tech effects, corporate stock-photo styling, glamour lighting, dramatic executive portrait lighting, overly formal clothing, artificial-looking skin, AI-smoothed expression, exaggerated beauty correction, or an unflattering documentary look.</p>
+            </div>
+
+            <h3 class="subsection-title">5.3 Generalized Photo / Image Prompt</h3>
+
+            <div class="guideline-box">
+                <p class="prompt-text">Create a professional but natural photograph for Brian Runk Web Development, an independent web developer serving small businesses. The image should feel believable, grounded, approachable, practical, and credible, like it was taken by a good local photographer for a real small-business website.
+
+Use naturalistic lighting, realistic shadows, restrained color, and a calm composition. Keep the palette compatible with muted blue, charcoal, white, warm off-white, and small green accent tones. The scene should feel clean and professional without becoming sterile, glossy, theatrical, futuristic, or corporate.
+
+If people appear, they should look like real people with natural expression, realistic skin texture, age-appropriate detail, and relaxed body language. Prioritize trust and practical competence over generic beauty, stock-photo polish, or idealized AI perfection.
+
+If the image shows a workspace, website process, client work, or small-business context, keep it uncluttered and specific: a laptop, notes, simple desk setup, website sketches, practical tools, or a believable local business environment. Avoid busy offices, exaggerated tech visuals, neon effects, fake holograms, generic handshake scenes, glamour lighting, over-retouching, artificial-looking skin, and obvious AI-generated artifacts.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">6. Voice &amp; Copy Direction</h2>
+
+            <h3 class="subsection-title">6.1 Core Tone</h3>
+
+            <div class="guideline-box">
+                <p>Plainspoken, practical, local, and service-oriented. The copy should make small-business website work feel clear and manageable.</p>
+            </div>
+
+            <h3 class="subsection-title">6.2 Written Voice / Copy Tone</h3>
+
+            <div class="guideline-box">
+                <p>Written communication should follow the same plainspoken, practical style as the website. This applies to site copy, emails, proposals, promotions, surveys, quizzes, one-pagers, and future brand-support materials.</p>
+
+                <ul>
+                    <li>Choose clear over clever.</li>
+                    <li>Be helpful, not salesy.</li>
+                    <li>Keep the tone practical and calm.</li>
+                    <li>Write in a local and small-business friendly way.</li>
+                    <li>Avoid hype, jargon, tech posturing, and corporate polish.</li>
+                    <li>Explain process simply.</li>
+                    <li>Make website work feel manageable and trustworthy.</li>
+                </ul>
+
+                <p>This section can be expanded as one-pagers, surveys, quizzes, and other written materials are created.</p>
+            </div>
+        </section>
+
+
+    </main>
+</body>
+</html>

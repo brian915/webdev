@@ -1,6 +1,8 @@
-
 .color-fg{
     color:_palette(fg);
+}
+.color-muted{
+    color:_palette(muted);
 }
 .color-accent{
     color: _palette(accent);
@@ -11,6 +13,12 @@
 .color-accent-light {
   color: _palette(accent-light);
 }
+.color-alert {
+  color: _palette(alert);
+}
+.color-confirmation {
+  color: _palette(confirmation);
+}
 .color-border{
     color: _palette(border);
 }
@@ -20,26 +28,32 @@
 .color-bg-subtle{
     color: _palette(bg-subtle);
 }
-.color-bg-subtle-atl{
+.color-bg-subtle-alt{
     color: _palette(bg-subtle-alt);
-}
-.color-alert {
-  color: _palette(alert);
-}
-.color-confirmation {
-  color: _palette(confirmation);
 }
 .background-fg {
   background-color: _palette(fg);
 }
+.background-muted {
+  background-color: _palette(muted);
+}
 .background-accent {
   background-color: _palette(accent);
+}
+.background-accent-secondary {
+  background-color: _palette(accent-secondary);
 }
 .background-accent-dark {
   background-color: _palette(accent-dark);
 }
 .background-accent-light {
   background-color: _palette(accent-light);
+}
+.background-alert{
+  background-color: _palette(alert);
+}
+.background-confirmation{
+  background-color: _palette(confirmation);
 }
 .background-border {
   background-color: _palette(border);
@@ -48,14 +62,8 @@
   background-color: _palette(bg);
 }
 .background-bg-subtle{
-  background-color: _palette(.bg-subtle);
+  background-color: _palette(bg-subtle);
 }
-.background-base-subtle-alt {
-  background-color: _palette(base-subtle-alt);
-}-
-.background-alert{
-  background-color: _palette(alert);
-}
-.background-confirmation{
-  background-color: _palette(confirmation);
+.background-bg-subtle-alt {
+  background-color: _palette(bg-subtle-alt);
 }

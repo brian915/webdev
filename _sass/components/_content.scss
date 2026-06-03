@@ -125,7 +125,6 @@
   h3,
   p,
   li {
-    color: _palette(fg);
     font-family: _font(family);
   }
 }
@@ -136,37 +135,20 @@
   font-size: 15px;
 }
 
-.document-hero {
-  .container {
-    padding-bottom: 56px;
-    padding-top: 64px;
-  }
-}
-
-.document-section {
-  .container {
-    border-top: 1px solid _palette(border);
-    padding-bottom: 56px;
-    padding-top: 56px;
-  }
-}
-
-.document-section-closing {
-  .container {
-    padding-bottom: 64px;
-  }
-}
-
 .section-heading-accent {
   align-items: center;
   border-left: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 28px;
   padding-left: 0;
-  text-align: center;
-}
+  text-align: left;
 
+  &.centered {
+    justify-content: center;
+    text-align: center;
+  }
+}
 .document-page .section-heading-accent::before {
   background: _palette(accent);
   content: "";
@@ -183,6 +165,7 @@
 .checklist-panel {
   border: 1px solid _palette(border);
   padding: 24px;
+  border-radius: 14px;
 }
 
 
@@ -231,7 +214,7 @@
     position: relative;
 
     &::before {
-      background: _palette(secondary);
+      background: _palette(accent-light);
       content: "";
       height: 7px;
       left: 0;
@@ -259,13 +242,6 @@
 
 
 @media (max-width: 767.98px) {
-  .document-hero,
-  .document-section {
-    .container {
-      padding-bottom: 38px;
-      padding-top: 38px;
-    }
-  }
 
   .content-card,
   .stat-card,

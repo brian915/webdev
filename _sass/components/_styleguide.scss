@@ -1,0 +1,304 @@
+
+
+.styleguide-page {
+    background:_palette(bg);
+}
+.styleguide-swatch-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 28px;
+}
+.styleguide-swatch {
+    background: _palette(bg);
+  border: 1px solid _palette(border);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(62, 63, 58, 0.14);
+  overflow: hidden;
+}
+
+.styleguide-swatch {
+  .styleguide-swatch-block,
+  .styleguide-swatch-body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.styleguide-swatch-block {
+  height: 128px;
+  width: 100%;
+}
+
+
+.styleguide-swatch-label {
+  color: _palette(fg);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  &.light {
+    color: _palette(bg);
+  }
+}
+
+.styleguide-swatch-body {
+  padding: 22px;
+}
+
+.styleguide-role-table {
+  border-collapse: collapse;
+  margin-top: 34px;
+  width: 100%;
+}
+
+.styleguide-role-table caption {
+  color: _palette(fg);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.styleguide-role-table th,
+.styleguide-role-table td {
+    border: 1px solid _palette(border);
+    padding: 14px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.styleguide-role-table th {
+  background: _palette(bg-subtle-alt);
+  color: _palette(fg);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.styleguide-role-swatch {
+    border: 1px solid _palette(border);
+    border-radius: 6px;
+    display: inline-block;
+    height: 34px;
+    margin-right: 12px;
+    vertical-align: middle;
+    width: 56px;
+}
+
+
+
+.styleguide-type-row {
+  align-items: flex-start;
+  border-bottom: 1px solid _palette(border);
+  display: grid;
+  gap: 42px;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2.4fr);
+  margin-bottom: 42px;
+  padding-bottom: 42px;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+.styleguide-type-meta {
+  border-right: 1px solid _palette(border);
+  padding-right: 28px;
+}
+
+.styleguide-type-specimen {
+  .alpha,
+  .numerals {
+    color: _palette(fg);
+    font-family: _font(family-heading);
+    font-weight: 700;
+  }
+
+  .alpha {
+    font-size: clamp(52px, 7vw, 76px);
+    line-height: 0.88;
+    margin-bottom: 18px;
+  }
+
+  .numerals {
+    font-size: clamp(34px, 4.5vw, 54px);
+    line-height: 1;
+    opacity: 0.26;
+  }
+
+  &.body {
+    .alpha,
+    .numerals {
+      font-family: _font(family);
+    }
+
+    .alpha {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 0.95;
+    }
+
+    .numerals {
+      font-size: clamp(24px, 3.5vw, 38px);
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .styleguide-type-row {
+    grid-template-columns: 1fr;
+  }
+
+  .styleguide-type-meta {
+    border-right: 0;
+    border-bottom: 1px solid _palette(border);
+    padding-bottom: 24px;
+    padding-right: 0;
+  }
+}
+
+.styleguide-contrast-stack {
+  display: grid;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.styleguide-contrast-block {
+  padding: 30px;
+}
+
+.styleguide-contrast-block strong {
+  display: block;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.12;
+  margin-bottom: 10px;
+}
+
+.styleguide-code {
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.styleguide-code-block {
+    background-color:_palette(background-muted);
+    border:1px solid _palette(border);
+}
+
+.styleguide-prompt-text {
+  background:_palette(bg-subtle);
+  border-left: 3px solid _palette(accent-light);
+  margin-top: 14px;
+  padding: 18px;
+  white-space: pre-line;
+}
+
+.styleguide-button-subtle {
+  background: _palette(bg-subtle-alt);
+  color: _palette(accent-secondary);
+  border: 1px solid _palette(accent-secondary);
+}
+
+.styleguide-button-subtle:hover {
+  background: _palette(bg-subtle);
+  color: _palette(accent-secondary);
+  border: 1px solid _palette(accent-secondary);
+}
+
+.styleguide-button-secondary {
+  background: _palette(accent-light);
+  color: _palette(bg);
+}
+
+.styleguide-button-secondary:hover {
+  background: _palette(accent-light);
+  color: _palette(fg);
+}
+
+.styleguide-button-secondary-accent {
+  background: _palette(accent-secondary);
+  color: _palette(bg);
+}
+
+.styleguide-button-secondary-accent:hover {
+  background: _palette(accent-secondary);
+  color: _palette(bg);
+}
+
+.styleguide-button-outline {
+  background: transparent;
+  border: 1px solid _palette(accent);
+  color: _palette(accent);
+}
+
+.styleguide-button-outline:hover {
+  background:_palette(bg-subtle);
+  color: _palette(accent-dark);
+}
+
+.styleguide-button-alert {
+  background: _palette(alert);
+  color:_palette(bg);
+}
+
+.styleguide-button-alert:hover {
+  background: _palette(alert);
+  color: _palette(bg);
+}
+
+.styleguide-button-confirmation {
+  background: _palette(confirmation);
+  color: _palette(bg);
+}
+
+.styleguide-button-confirmation:hover {
+  background: _palette(confirmation);
+  color: _palette(bg);
+}
+
+.styleguide-button-disabled,
+.styleguide-button-disabled:hover {
+    background: _palette(border);
+  color: _palette(fg);
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+  border:1px solid _palette(muted);
+}
+
+.styleguide-button-small {
+  font-size: 12px;
+  height: 34px;
+  line-height: 34px;
+  padding: 0 12px;
+}
+
+.styleguide-button-large {
+  font-size: 16px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 22px;
+}
+
+.styleguide-button-hover-demo {
+  background: _palette(accent-dark);
+}
+
+.styleguide-icon-medium {
+  font-size: 24px;
+}
+
+.styleguide-icon-large {
+  font-size: 36px;
+}
+
+@media (max-width: 760px) {
+  .styleguide-type-row {
+    grid-template-columns: 1fr;
+  }
+}
