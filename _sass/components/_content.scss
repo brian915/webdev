@@ -91,7 +91,7 @@
   blockquote {
     padding: 0 1em;
     color: _palette(fg);
-    border-left: .25em solid _palette(secondary);
+    border-left: .25em solid _palette(accent-light);
   }
 }
 
@@ -173,7 +173,7 @@
 }
 
 .document-page .stat-value {
-  color: _palette(secondary);
+//  color: _palette(accent-light);
   font-size: 42px;
   font-weight: 700;
   line-height: 1;
@@ -216,15 +216,23 @@
 	padding-left: 50px;
 	font-size: 20px;
 	line-height: 1.4;
+	margin-bottom: 15px;
     }
     .list-group-item::before {
 	left: 25px;
 	height: 9px;
-	top: .85em;
+	top: .4em;
 	width: 9px;
   }
 }
 
+.staggered-list li:nth-child(2) {
+    margin-left: 3rem;
+}
+
+.staggered-list li:nth-child(3) {
+    margin-left: 6rem;
+}
 
 @media (max-width: 767.98px) {
 

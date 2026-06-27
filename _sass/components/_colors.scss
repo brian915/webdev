@@ -7,6 +7,10 @@
 .color-accent{
     color: _palette(accent);
 }
+
+.color-accent-secondary{
+    color: _palette(accent-secondary);
+}
 .color-accent-dark{
     color: _palette(accent-dark);
 }
@@ -18,6 +22,12 @@
 }
 .color-confirmation {
   color: _palette(confirmation);
+}
+.color-yield {
+  color: _palette(yield);
+}
+.color-warning {
+  color: _palette(warning);
 }
 .color-border{
     color: _palette(border);
@@ -54,6 +64,12 @@
 }
 .background-confirmation{
   background-color: _palette(confirmation);
+}
+.background-yield {
+  background-color: _palette(yield);
+}
+.background-warning {
+  background-color: _palette(warning);
 }
 .background-border {
   background-color: _palette(border);
