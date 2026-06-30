@@ -9,10 +9,11 @@ hero_text: |
   <p>I’m a local web developer focused on practical websites for small businesses.<br />
   I have 30 years hands-on experience with web technology, and I use my background to help local businesses improve how they present themselves online.</p>
 ---
+{% assign promo = site.data.promo %}
 <div class="row justify-content-center">
   <div class="col-12 col-md-6 col-lg-4">
     <b>Simple Services</b>
-    <br /><span class="text-decoration-line-through text-muted">$2,000</span>&nbsp;&nbsp;<span class="text-accent"><b><em>$,1500</em></b></span> Includes:
+    <br />{% if promo and promo.sale_price %}<span class="text-decoration-line-through text-muted">{{ promo.price }}</span>&nbsp;&nbsp;<span class="text-accent"><b><em>{{ promo.sale_price }}</em></b></span>{% elsif promo and promo.price %}<span class="text-accent"><b><em>{{ promo.price }}</em></b></span>{% endif %} Includes:
     <ul>
       <li>Design and development.</li>
       <li>Updating outdated websites.</li>

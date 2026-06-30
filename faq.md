@@ -3,9 +3,10 @@ title: Frequently Asked Questions
 layout: landing
 description: Frequently asked questions about Brian Runk web development services.
 ---
+{% assign promo = site.data.promo %}
 <section class="document-hero">
 <div class="container pb-2 pt-2">
-<div class="col-12 col-lg-10 jus]tify-content-between">
+<div class="col-12 col-lg-10 justify-content-between">
 <h1 class="text-center">Common Questions & Answers</h1>
 </div>
 </div>
@@ -18,7 +19,7 @@ description: Frequently asked questions about Brian Runk web development service
 <div class="row justify-content-center mb-2">
 <div class="content-card h-100  background-bg-subtle">
 <h3>How much does a website cost?</h3>
-<p class="mb-0">My standard small-business website projects are built around fixed-price, limited-scope engagements, so you know the cost before work begins. More involved or custom work can be discussed separately if the project needs it.<br /><code>Summer Launch Special: 25% off until 30 June, 2026</code></p>
+<p class="mb-0">My standard small-business website projects are built around fixed-price, limited-scope engagements, so you know the cost before work begins. More involved or custom work can be discussed separately if the project needs it.{% if promo and promo.enabled %}<br /><code>{{ promo.name }}: {{ promo.sale_price }}{% if promo.price %} regularly {{ promo.price }}{% endif %}{% if promo.end_date %} until {{ promo.end_date }}{% endif %}</code>{% endif %}</p>
 </div>
 </div>
 

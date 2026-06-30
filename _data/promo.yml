@@ -1,3 +1,7 @@
 enabled: true
 aria_label: Promotion
-text: "Summer Starter Sale • 25% off regular price if you order by June 30"
+name: "Independence Sale"
+price: "$2,000"
+sale_price: "$1,500"
+discount: "25% off"
+end_date: "July 31, 2026"
