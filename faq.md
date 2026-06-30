@@ -68,7 +68,7 @@ description: Frequently asked questions about Brian Runk web development service
 <div class="row justify-content-center mb-2">
 <div class="content-card h-100  background-bg">
 <h3>Can I pay for a consultation before deciding on a full site?</h3>
-<p class="mb-0">Yes. A paid website review or consultation can help clarify what you need before committing to a larger project.</p>
+<p class="mb-0">Yes. The <a href="/report-card/">Website Report Card</a> is a paid website review that helps clarify what is working, what is getting in the way, and what to fix first before committing to a larger project.</p>
 </div>
 </div>
 
