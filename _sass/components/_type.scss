@@ -46,3 +46,27 @@ ol {
     margin: 0;
   }
 }
+
+.page-sources {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.source-ref {
+  margin-left: 0.15em;
+  color: _palette(muted);
+  font-size: 0.75em;
+}
+
+.source-ref a {
+    text-decoration: none;
+    color: _palette(muted);
+}
+
+.source-ref a:hover {
+    text-decoration: underline;
+    color: _palette(accent);
+}
