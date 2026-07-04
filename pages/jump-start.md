@@ -1,0 +1,50 @@
+---
+title: Website Jump-Start
+layout: content
+permalink: /pages/jump/
+description: Let's figure out what you website needs to do.
+---
+<main class="document-page">
+    <header class="document-header-strip">
+        <div class="container pb-2 pt-2">
+            <div class="row justify-content-between align-items-baseline gy-2">
+                <div class="col-12 col-md-auto">
+                    <p class="mb-0">Brian Runk Web Development</p>
+                </div>
+                <div class="col-12 col-md-auto">
+                    <p class="mb-0">Professional websites for small businesses</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="document-hero">
+        <div class="container pb-2 pt-2">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10 justify-content-between">
+                    <h2 class="text-center">Let's figure it out together</h2>
+		    <ul class="marker-list list-group-flush">
+		      <li class="list-group-item">Tell me a little about your business, your current site, and what you want it to do better.</li>
+		      <li class="list-group-item">The Website Jump-Start helps clarify things and gives us a practical place to start</li>
+		    </ul>
+		</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="document-section">
+      <div class="container pb-2 pt-2">
+        <div class="row justify-content-center">
+	  <div class="col-12 col-lg-10 col-md-8 mb-2">
+            <div class="content-card h-100 background-bg-subtle">
+	      <div class="tally-form">
+		<iframe data-tally-src="https://tally.so/embed/RGV0QQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1295" frameborder="0" marginheight="0" marginwidth="0" title="Website On Ramp"></iframe>
+		<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </section>
+</main>
+`<
