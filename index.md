@@ -2,6 +2,8 @@
 title: Brian Runk - Web Development
 layout: content
 description: CREDENTIALS AND SERVICES OFFERED
+intro_include: intro_home.html
+render_body: false
 carousel: true
 show_call_box: true
 show_highlights: true

@@ -1,0 +1,11 @@
+{% assign promo = site.data.promo %}
+{% if promo and promo.enabled %}
+{% assign display_class = include.display_class | default: "" %}
+{% capture promo_text %}{{ promo.name }}{% if promo.sale_price %} • {{ promo.sale_price }}{% if promo.price %} (regularly {{ promo.price }}){% endif %}{% elsif promo.discount %} • {{ promo.discount }}{% endif %}{% if promo.end_date %} if you order by {{ promo.end_date }}{% endif %}{% endcapture %}
+<div class="sale-ticker{% if display_class != blank %} {{ display_class }}{% endif %}" aria-label="{{ promo.aria_label | default: 'Promotion' }}">
+  <div class="sale-ticker-track">
+    <span>{{ promo_text }}</span>
+    <span>{{ promo_text }}</span>
+  </div>
+</div>
+{% endif %}

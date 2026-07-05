@@ -1,0 +1,20 @@
+{% if page.info_box_title or page.info_box_content %}
+<div class="container pb-2">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-8">
+      <div class="call">
+        <div class="call-box-top">
+          {% if page.info_box_title %}
+            <h2>{{ page.info_box_title }}</h2>
+          {% endif %}
+          {% if page.info_box_content %}
+            <div class="content">
+              {{ page.info_box_content | markdownify }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

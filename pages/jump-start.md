@@ -1,10 +1,10 @@
 ---
 title: Website Jump-Start
-layout: content
+layout: landing
 permalink: /pages/jump/
 description: Let's figure out what you website needs to do.
 ---
-<main class="document-page">
+
     <header class="document-header-strip">
         <div class="container pb-2 pt-2">
             <div class="row justify-content-between align-items-baseline gy-2">

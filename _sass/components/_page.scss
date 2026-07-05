@@ -25,11 +25,11 @@
   color: _palette(fg);
 }
 
-.site-main.surface-light .content-404 {
+.content-message {
   min-height: 600px;
   padding-top: 2rem;
   padding-bottom: 4rem;
-  background-image: var(--surface-background-image);
+
   background-repeat: no-repeat;
   background-position: left center;
   background-size: min(42vw, 420px) auto;
@@ -37,6 +37,11 @@
   justify-content: flex-end;
   align-items: center;
 }
+
+//background-image: var(--surface-background-image);
+
+
+//style="--surface-background-image: url('{{ '/assets/images/illustrations/busted_robot.svg' | relative_url }}');">
 
 .page-404 .error-404-message {
   width: 100%;

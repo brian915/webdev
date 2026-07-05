@@ -1,0 +1,24 @@
+{% assign promo = site.data.promo %}
+<div class="row justify-content-center">
+  <div class="col-12 col-md-6 col-lg-4">
+    <b>Simple Services</b>
+    <br />{% if promo and promo.sale_price %}<span class="text-decoration-line-through text-muted">{{ promo.price }}</span>&nbsp;&nbsp;<span class="text-accent"><b><em>{{ promo.sale_price }}</em></b></span>{% elsif promo and promo.price %}<span class="text-accent"><b><em>{{ promo.price }}</em></b></span>{% endif %} Includes:
+    <ul>
+      <li>Design and development.</li>
+      <li>Updating outdated websites.</li>
+      <li>Mobile-friendly page layouts.</li>
+      <li>Site launch assistance.</li>
+    </ul>
+  </div>
+
+ <div class="col-12 col-md-6 col-lg-4">
+    <b>Straight Forward Process</b>
+    <ol>
+      <li>Consultation</li>
+      <li>Scope</li>
+      <li>Build</li>
+      <li>Review</li>
+      <li>Launch!</li>
+    </ol>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+{% if page.show_highlights and site.data.highlights %}
+<div class="strip strip-grey">
+  <div class="container pb-2 pt-2">
+    <div class="row justify-content-center">
+      {% for feature in site.data.highlights %}
+      <div class="col-12 col-md-6 col-lg-4 mb-2">
+        <div class="feature">
+          {% if feature.icon %}
+          <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.icon | relative_url }}" width="80" height="80" /></div>
+          {% endif %}
+          <h2 class="feature-title">{{ feature.title }}</h2>
+          <div class="feature-content">{{ feature.description }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
