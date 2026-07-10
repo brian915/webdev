@@ -10,6 +10,7 @@
     {{content}}
   </div>
   {% include footer.html %}
+  {% if page.show_offer_modal %}{% include offer_modal.html %}{% endif %}
   {% include scripts.html %}
 </body>
 </html>

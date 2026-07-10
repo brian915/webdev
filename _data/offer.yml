@@ -2,4 +2,14 @@ enabled: true
 aria_label: Offer
 price: "$150"
 text: "Your Website Report Card - only "
-delivery: "one week"
+delivery: ""
+
+modal:
+  enabled: true
+  cooldown_days: 7
+  heading: "Would Your Web Page Pass?"
+  body: "Get a clear report of what working, what isn't, and how to fix it."
+  image: "assets/images/promos/report_card_modal.png"  
+  image_alt: "Website Report Card"
+  cta_label: "Get Your Report"
+  cta_url: "/report-card"

@@ -7,6 +7,7 @@ render_body: false
 carousel: true
 show_call_box: true
 show_highlights: true
+show_offer_modal: true
 ---
 <h1>Brian Runk</h1>
 <h2>Simple, professional websites</h2>

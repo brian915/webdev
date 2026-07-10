@@ -1,0 +1,25 @@
+{% assign m = site.data.offer.modal %}
+{% if m and m.enabled %}
+<div class="modal fade offer-modal" id="offerModal" tabindex="-1" aria-labelledby="offerModalLabel" aria-hidden="true" data-cooldown-days="{{ m.cooldown_days | default: 7 }}">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-header border-0 justify-content-center">
+	{% if m.heading %}<h2 id="offerModalLabel" class="intro mb-2">{{ m.heading }}</h2>{% endif %}
+      </div>
+      <div class="modal-body text-center">
+        {% if m.image %}
+        <img class="offer-modal-image img-fluid mb-3" src="{{ m.image | relative_url }}" alt="{{ m.image_alt }}">
+        {% endif %}
+
+        {% if m.body %}<p class="mb-2">{{ m.body }}</p>{% endif %}
+        {% assign offer = site.data.offer %}
+        {% if offer.text and offer.price %}
+	<p class="section-heading-accent mb-4 justify-content-center">{{offer.text}}{{ offer.price }}</p>
+	{% endif %}
+        <a class="button" href="{{ m.cta_url | default: '/report-card' | relative_url }}">{{ m.cta_label | default: 'Get Your Report' }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
