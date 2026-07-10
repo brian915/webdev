@@ -8,7 +8,7 @@ modal:
   enabled: true
   cooldown_days: 7
   heading: "Would Your Web Page Pass?"
-  body: "Get a clear report of what working, what isn't, and how to fix it."
+  body: "Get a clear report of what's working, what isn't, and how to fix it."
   image: "assets/images/promos/report_card_modal.png"  
   image_alt: "Website Report Card"
   cta_label: "Get Your Report"
