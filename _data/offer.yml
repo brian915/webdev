@@ -2,7 +2,7 @@ enabled: true
 aria_label: Offer
 price: "$150"
 text: "Your Website Report Card - only "
-delivery: ""
+delivery: "Seven Days"
 
 modal:
   enabled: true
